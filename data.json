@@ -1,0 +1,411 @@
+{
+  "updated_at": "2026-06-19 16:23",
+  "rates": {
+    "HKD": [
+      {
+        "bank": "富融銀行",
+        "type": "virtual",
+        "bestRate": 2.9,
+        "bestPeriod": "12個月",
+        "minDeposit": "沒有最低",
+        "note": ""
+      },
+      {
+        "bank": "象象銀行",
+        "type": "virtual",
+        "bestRate": 2.9,
+        "bestPeriod": "12個月",
+        "minDeposit": "沒有最低",
+        "note": ""
+      },
+      {
+        "bank": "匯立銀行",
+        "type": "virtual",
+        "bestRate": 2.8,
+        "bestPeriod": "12個月",
+        "minDeposit": "HKD 10",
+        "note": ""
+      },
+      {
+        "bank": "Mox銀行",
+        "type": "virtual",
+        "bestRate": 112.5,
+        "bestPeriod": "12個月",
+        "minDeposit": "HKD 1",
+        "note": "auto-scraped"
+      },
+      {
+        "bank": "富邦銀行",
+        "type": "traditional",
+        "bestRate": 2.7,
+        "bestPeriod": "3-12個月",
+        "minDeposit": "HKD 500,000",
+        "note": "大額存款優惠"
+      },
+      {
+        "bank": "理慧銀行",
+        "type": "virtual",
+        "bestRate": 2.5,
+        "bestPeriod": "3-6個月",
+        "minDeposit": "HKD 50,000",
+        "note": ""
+      },
+      {
+        "bank": "建設銀行亞洲",
+        "type": "traditional",
+        "bestRate": 2.55,
+        "bestPeriod": "3個月",
+        "minDeposit": "HKD 10,000",
+        "note": ""
+      },
+      {
+        "bank": "工銀亞洲",
+        "type": "traditional",
+        "bestRate": 2.55,
+        "bestPeriod": "3個月",
+        "minDeposit": "HKD 50,000",
+        "note": ""
+      },
+      {
+        "bank": "南洋商業銀行",
+        "type": "traditional",
+        "bestRate": 2.65,
+        "bestPeriod": "3個月",
+        "minDeposit": "HKD 100,000",
+        "note": ""
+      },
+      {
+        "bank": "上海商業銀行",
+        "type": "traditional",
+        "bestRate": 2.63,
+        "bestPeriod": "3個月",
+        "minDeposit": "HKD 1,000",
+        "note": ""
+      },
+      {
+        "bank": "中信銀行(國際)",
+        "type": "traditional",
+        "bestRate": 2.6,
+        "bestPeriod": "12個月",
+        "minDeposit": "HKD 10,000",
+        "note": ""
+      },
+      {
+        "bank": "東亞銀行",
+        "type": "traditional",
+        "bestRate": 2.45,
+        "bestPeriod": "3-6個月",
+        "minDeposit": "HKD 10,000",
+        "note": ""
+      },
+      {
+        "bank": "渣打銀行",
+        "type": "traditional",
+        "bestRate": 2.4,
+        "bestPeriod": "3個月",
+        "minDeposit": "HKD 10,000",
+        "note": ""
+      },
+      {
+        "bank": "中銀香港",
+        "type": "traditional",
+        "bestRate": 2.4,
+        "bestPeriod": "3-6個月",
+        "minDeposit": "HKD 10,000",
+        "note": ""
+      },
+      {
+        "bank": "恒生銀行",
+        "type": "traditional",
+        "bestRate": 2.4,
+        "bestPeriod": "3個月",
+        "minDeposit": "HKD 10,000",
+        "note": ""
+      },
+      {
+        "bank": "滙豐銀行",
+        "type": "traditional",
+        "bestRate": 2.3,
+        "bestPeriod": "3個月",
+        "minDeposit": "HKD 10,000",
+        "note": ""
+      },
+      {
+        "bank": "大眾銀行",
+        "type": "traditional",
+        "bestRate": 2.35,
+        "bestPeriod": "1-12個月",
+        "minDeposit": "HKD 100,000",
+        "note": ""
+      },
+      {
+        "bank": "大新銀行",
+        "type": "traditional",
+        "bestRate": 2.4,
+        "bestPeriod": "3個月",
+        "minDeposit": "HKD 200,000",
+        "note": ""
+      },
+      {
+        "bank": "星展銀行",
+        "type": "traditional",
+        "bestRate": 2.4,
+        "bestPeriod": "3個月",
+        "minDeposit": "HKD 10,000",
+        "note": ""
+      },
+      {
+        "bank": "招商永隆銀行",
+        "type": "traditional",
+        "bestRate": 2.0,
+        "bestPeriod": "3-12個月",
+        "minDeposit": "HKD 500,000",
+        "note": ""
+      },
+      {
+        "bank": "眾安銀行",
+        "type": "virtual",
+        "bestRate": 2.01,
+        "bestPeriod": "12個月",
+        "minDeposit": "HKD 1",
+        "note": ""
+      }
+    ],
+    "USD": [
+      {
+        "bank": "富邦銀行",
+        "type": "traditional",
+        "bestRate": 4.0,
+        "bestPeriod": "3個月",
+        "minDeposit": "USD 65,000",
+        "note": "新資金或網上開立優惠可達4%"
+      },
+      {
+        "bank": "建設銀行亞洲",
+        "type": "traditional",
+        "bestRate": 3.8,
+        "bestPeriod": "3-12個月",
+        "minDeposit": "USD 10,000",
+        "note": ""
+      },
+      {
+        "bank": "富融銀行",
+        "type": "virtual",
+        "bestRate": 3.6,
+        "bestPeriod": "3個月",
+        "minDeposit": "沒有最低",
+        "note": ""
+      },
+      {
+        "bank": "恒生銀行",
+        "type": "traditional",
+        "bestRate": 3.5,
+        "bestPeriod": "3-6個月",
+        "minDeposit": "USD 2,000",
+        "note": ""
+      },
+      {
+        "bank": "中銀香港",
+        "type": "traditional",
+        "bestRate": 3.5,
+        "bestPeriod": "3-6個月",
+        "minDeposit": "USD 1,000",
+        "note": ""
+      },
+      {
+        "bank": "工銀亞洲",
+        "type": "traditional",
+        "bestRate": 3.45,
+        "bestPeriod": "3個月",
+        "minDeposit": "USD 1,000,000",
+        "note": "大額優惠"
+      },
+      {
+        "bank": "Mox銀行",
+        "type": "virtual",
+        "bestRate": 112.5,
+        "bestPeriod": "12個月",
+        "minDeposit": "HKD 1",
+        "note": "auto-scraped"
+      },
+      {
+        "bank": "招商永隆銀行",
+        "type": "traditional",
+        "bestRate": 3.35,
+        "bestPeriod": "3個月",
+        "minDeposit": "USD 50,000",
+        "note": ""
+      },
+      {
+        "bank": "大眾銀行",
+        "type": "traditional",
+        "bestRate": 3.4,
+        "bestPeriod": "3個月",
+        "minDeposit": "沒有最低",
+        "note": ""
+      },
+      {
+        "bank": "南洋商業銀行",
+        "type": "traditional",
+        "bestRate": 3.35,
+        "bestPeriod": "3個月",
+        "minDeposit": "USD 13,000",
+        "note": ""
+      },
+      {
+        "bank": "上海商業銀行",
+        "type": "traditional",
+        "bestRate": 3.33,
+        "bestPeriod": "3個月",
+        "minDeposit": "USD 10,000",
+        "note": ""
+      },
+      {
+        "bank": "東亞銀行",
+        "type": "traditional",
+        "bestRate": 3.4,
+        "bestPeriod": "3個月",
+        "minDeposit": "USD 1,000",
+        "note": ""
+      },
+      {
+        "bank": "滙豐銀行",
+        "type": "traditional",
+        "bestRate": 3.3,
+        "bestPeriod": "3個月",
+        "minDeposit": "USD 2,000",
+        "note": ""
+      },
+      {
+        "bank": "星展銀行",
+        "type": "traditional",
+        "bestRate": 3.35,
+        "bestPeriod": "3個月",
+        "minDeposit": "USD 6,000",
+        "note": ""
+      },
+      {
+        "bank": "渣打銀行",
+        "type": "traditional",
+        "bestRate": 3.2,
+        "bestPeriod": "3-6個月",
+        "minDeposit": "USD 2,000",
+        "note": ""
+      },
+      {
+        "bank": "象象銀行",
+        "type": "virtual",
+        "bestRate": 3.15,
+        "bestPeriod": "12個月",
+        "minDeposit": "沒有最低",
+        "note": ""
+      },
+      {
+        "bank": "匯立銀行",
+        "type": "virtual",
+        "bestRate": 3.05,
+        "bestPeriod": "3個月",
+        "minDeposit": "HKD 10",
+        "note": ""
+      }
+    ],
+    "RMB": [
+      {
+        "bank": "富融銀行",
+        "type": "virtual",
+        "bestRate": 1.55,
+        "bestPeriod": "12個月",
+        "minDeposit": "沒有最低",
+        "note": ""
+      },
+      {
+        "bank": "富邦銀行",
+        "type": "traditional",
+        "bestRate": 1.5,
+        "bestPeriod": "3-12個月",
+        "minDeposit": "RMB 500,000",
+        "note": ""
+      },
+      {
+        "bank": "南洋商業銀行",
+        "type": "traditional",
+        "bestRate": 1.5,
+        "bestPeriod": "12個月",
+        "minDeposit": "RMB 100,000",
+        "note": ""
+      },
+      {
+        "bank": "工銀亞洲",
+        "type": "traditional",
+        "bestRate": 1.4,
+        "bestPeriod": "12個月",
+        "minDeposit": "RMB 500,000",
+        "note": ""
+      },
+      {
+        "bank": "象象銀行",
+        "type": "virtual",
+        "bestRate": 1.35,
+        "bestPeriod": "6個月",
+        "minDeposit": "沒有最低",
+        "note": ""
+      },
+      {
+        "bank": "交通銀行",
+        "type": "traditional",
+        "bestRate": 1.35,
+        "bestPeriod": "3個月",
+        "minDeposit": "RMB 10,000",
+        "note": ""
+      },
+      {
+        "bank": "中銀香港",
+        "type": "traditional",
+        "bestRate": 1.3,
+        "bestPeriod": "12個月",
+        "minDeposit": "RMB 10,000",
+        "note": ""
+      },
+      {
+        "bank": "滙豐銀行",
+        "type": "traditional",
+        "bestRate": 1.3,
+        "bestPeriod": "3-12個月",
+        "minDeposit": "RMB 10,000",
+        "note": ""
+      },
+      {
+        "bank": "大眾銀行",
+        "type": "traditional",
+        "bestRate": 1.3,
+        "bestPeriod": "12個月",
+        "minDeposit": "沒有最低",
+        "note": ""
+      },
+      {
+        "bank": "恒生銀行",
+        "type": "traditional",
+        "bestRate": 1.2,
+        "bestPeriod": "3-6個月",
+        "minDeposit": "RMB 10,000",
+        "note": ""
+      },
+      {
+        "bank": "渣打銀行",
+        "type": "traditional",
+        "bestRate": 1.2,
+        "bestPeriod": "12個月",
+        "minDeposit": "RMB 10,000",
+        "note": ""
+      },
+      {
+        "bank": "招商永隆銀行",
+        "type": "traditional",
+        "bestRate": 1.25,
+        "bestPeriod": "12個月",
+        "minDeposit": "RMB 10,000",
+        "note": ""
+      }
+    ]
+  }
+}
