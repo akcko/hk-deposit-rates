@@ -3,219 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>香港定期存款利率比較 | HK Deposit Rates</title>
+<title>香港定期存款利率比較</title>
 <style>
-:root {
-  --bg: #f3f4f6;
-  --bg-card: #ffffff;
-  --bg-card-hover: #f1f5f9;
-  --bg-input: #f1f5f9;
-  --border: #e2e8f0;
-  --border-light: #cbd5e1;
-  --text: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  --accent: #4338ca;
-  --accent-light: #4f46e5;
-  --accent-glow: rgba(67, 56, 202, 0.08);
-  --green: #059669;
-  --green-glow: rgba(5, 150, 105, 0.08);
-  --green-dark: #047857;
-  --orange: #d97706;
-  --orange-glow: rgba(217, 119, 6, 0.08);
-  --red: #dc2626;
-  --purple: #7c3aed;
-  --purple-glow: rgba(124, 58, 237, 0.08);
-  --gold: #b45309;
-  --gold-glow: rgba(180, 83, 9, 0.08);
-  --radius: 12px;
-  --radius-sm: 8px;
-  --shadow: 0 4px 18px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.02);
-  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.03);
-  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
+:root { --bg:#f3f4f6; --bg-card:#fff; --border:#e2e8f0; --text:#0f172a; --text-secondary:#475569; --text-muted:#64748b; --accent:#4338ca; --accent-light:#4f46e5; --green:#059669; --orange:#d97706; --purple:#7c3aed; --radius:12px; --shadow:0 4px 18px rgba(15,23,42,0.03); }
 * { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Noto Sans SC', 'Noto Sans HK', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-}
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans HK',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+.header { background:rgba(255,255,255,0.85); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; backdrop-filter:blur(20px); }
+.header-inner { max-width:1400px; margin:0 auto; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; }
+.logo { display:flex; align-items:center; gap:12px; }
+.logo-icon { width:40px; height:40px; background:linear-gradient(135deg,var(--accent),var(--purple)); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; }
+.logo-text h1 { font-size:18px; font-weight:700; }
+.logo-text span { font-size:11px; color:var(--text-muted); }
+.live-badge { display:flex; align-items:center; gap:6px; background:rgba(5,150,105,0.08); border:1px solid rgba(5,150,105,0.2); padding:6px 14px; border-radius:20px; font-size:12px; font-weight:600; color:var(--green); }
+.live-dot { width:7px; height:7px; background:var(--green); border-radius:50%; }
+.main { max-width:1400px; margin:0 auto; padding:24px; }
 
-.header {
-  background: rgba(255,255,255,0.85);
-  border-bottom: 1px solid var(--border);
-  position: sticky; top: 0; z-index: 100;
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-}
-.header-inner {
-  max-width: 1400px; margin: 0 auto; padding: 16px 24px;
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
-}
-.logo { display: flex; align-items: center; gap: 12px; }
-.logo-icon {
-  width: 40px; height: 40px;
-  background: linear-gradient(135deg, var(--accent), var(--purple));
-  border-radius: 10px; display: flex; align-items: center; justify-content: center;
-  font-size: 20px; box-shadow: 0 4px 12px var(--accent-glow);
-}
-.logo-text h1 { font-size: 18px; font-weight: 700; letter-spacing: -0.3px; color: var(--text); }
-.logo-text span { font-size: 11px; color: var(--text-muted); letter-spacing: 0.5px; }
-.header-right { display: flex; align-items: center; gap: 12px; }
-.live-badge {
-  display: flex; align-items: center; gap: 6px;
-  background: var(--green-glow); border: 1px solid rgba(5,150,105,0.2);
-  padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--green);
-}
-.live-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; }
-.update-time { font-size: 12px; color: var(--text-muted); }
+.stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:28px; }
+.stat-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:20px; position:relative; overflow:hidden; box-shadow:var(--shadow); }
+.stat-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+.stat-card:nth-child(1)::before { background:linear-gradient(90deg,var(--green),var(--accent)); }
+.stat-card:nth-child(2)::before { background:linear-gradient(90deg,var(--accent),var(--purple)); }
+.stat-card:nth-child(3)::before { background:linear-gradient(90deg,var(--orange),#b45309); }
+.stat-card:nth-child(4)::before { background:linear-gradient(90deg,var(--purple),var(--accent)); }
+.stat-label { font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px; }
+.stat-value { font-size:28px; font-weight:800; letter-spacing:-1px; }
+.stat-value .unit { font-size:16px; font-weight:500; color:var(--text-secondary); }
+.stat-sub { font-size:12px; color:var(--text-muted); margin-top:4px; }
 
-.main { max-width: 1400px; margin: 0 auto; padding: 24px; }
+.filter-section { margin-bottom:24px; }
+.filter-row { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-bottom:12px; }
+.filter-label { font-size:13px; font-weight:600; color:var(--text-secondary); min-width:60px; }
+.filter-group { display:flex; gap:4px; background:#f1f5f9; border-radius:8px; padding:3px; border:1px solid var(--border); }
+.filter-btn { padding:8px 16px; border:none; border-radius:6px; background:transparent; color:var(--text-secondary); font-size:13px; font-weight:500; cursor:pointer; transition:all 0.2s; white-space:nowrap; }
+.filter-btn:hover { color:var(--text); background:rgba(15,23,42,0.05); }
+.filter-btn.active { background:var(--accent); color:white; box-shadow:0 2px 8px rgba(67,56,202,0.2); }
+.filter-btn.active.green { background:var(--green); box-shadow:0 2px 8px rgba(5,150,105,0.25); }
+.filter-btn.active.orange { background:var(--orange); color:white; box-shadow:0 2px 8px rgba(217,119,6,0.25); }
+.filter-btn.active.purple { background:var(--purple); box-shadow:0 2px 8px rgba(124,58,237,0.25); }
+.search-box { display:flex; align-items:center; gap:8px; background:#fff; border:1px solid var(--border); border-radius:8px; padding:8px 14px; flex:1; min-width:200px; max-width:320px; }
+.search-box input { background:none; border:none; outline:none; color:var(--text); font-size:14px; width:100%; }
+.search-box input::placeholder { color:var(--text-muted); }
 
-.stats-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px;
+.table-wrapper { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); }
+.table-header-bar { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--border); }
+.table-title { font-size:15px; font-weight:700; display:flex; align-items:center; gap:8px; }
+.bank-count { background:rgba(67,56,202,0.08); color:var(--accent-light); font-size:12px; font-weight:600; padding:2px 10px; border-radius:12px; }
+.table-scroll { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; min-width:700px; }
+thead th { padding:14px 16px; font-size:12px; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; text-align:left; border-bottom:1px solid var(--border); background:var(--bg); position:sticky; top:0; cursor:pointer; white-space:nowrap; }
+thead th.sorted { color:var(--accent-light); }
+tbody tr { border-bottom:1px solid var(--border); transition:all 0.2s; }
+tbody tr:hover { background:var(--bg); }
+tbody tr.best-rate { background:rgba(5,150,105,0.03); }
+tbody td { padding:14px 16px; font-size:14px; white-space:nowrap; vertical-align:middle; }
+.bank-cell { display:flex; align-items:center; gap:12px; min-width:250px; }
+.bank-icon { width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:800; color:white; flex-shrink:0; }
+.bank-info { display:flex; flex-direction:column; gap:3px; }
+.bank-name { font-weight:700; font-size:14px; }
+.bank-eng { font-size:11px; color:var(--text-muted); font-weight:600; }
+.bank-type { font-size:10px; padding:1px 6px; border-radius:4px; font-weight:600; display:inline-block; }
+.bank-type.traditional { background:rgba(67,56,202,0.06); color:var(--accent-light); }
+.bank-type.virtual { background:rgba(14,165,233,0.08); color:#0284c7; }
+.rate-cell { font-weight:700; font-size:16px; font-variant-numeric:tabular-nums; }
+.rate-cell.best { color:var(--green); position:relative; }
+.rate-cell.best::after { content:'👑'; font-size:10px; margin-left:4px; vertical-align:super; }
+.rate-cell.good { color:var(--accent-light); }
+.rate-cell.low { color:var(--text-muted); }
+.period-cell { font-size:13px; color:var(--text-secondary); font-weight:500; }
+.min-deposit { font-size:13px; color:var(--text-secondary); }
+.min-deposit .no-min { color:var(--green); font-weight:500; }
+.note-cell { font-size:12px; color:var(--text-muted); max-width:220px; white-space:normal; line-height:1.5; }
+.loading { text-align:center; padding:40px; color:var(--text-muted); font-size:14px; }
+
+.calc-section { margin-top:32px; display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.calc-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); }
+.calc-title { font-size:16px; font-weight:700; margin-bottom:20px; display:flex; align-items:center; gap:8px; }
+.calc-form { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.form-group { display:flex; flex-direction:column; gap:6px; }
+.form-group.full { grid-column:1 / -1; }
+.form-group label { font-size:12px; font-weight:600; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px; }
+.form-group select, .form-group input { padding:10px 14px; background:#fff; border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:14px; outline:none; }
+.form-group select:focus, .form-group input:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(67,56,202,0.08); }
+.calc-btn { padding:12px; background:linear-gradient(135deg,var(--accent),var(--purple)); border:none; border-radius:8px; color:white; font-size:14px; font-weight:700; cursor:pointer; transition:all 0.2s; }
+.calc-btn:hover { transform:translateY(-1px); box-shadow:0 4px 16px rgba(67,56,202,0.25); }
+.calc-result { margin-top:20px; padding:20px; background:rgba(5,150,105,0.04); border:1px solid rgba(5,150,105,0.15); border-radius:8px; display:none; }
+.calc-result.show { display:block; animation:fadeIn 0.3s ease; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.result-row { display:flex; justify-content:space-between; align-items:center; padding:6px 0; }
+.result-row+.result-row { border-top:1px solid rgba(5,150,105,0.08); }
+.result-label { font-size:13px; color:var(--text-secondary); }
+.result-value { font-size:15px; font-weight:700; }
+.result-value.highlight { color:var(--green); font-size:22px; }
+.chart-wrapper { width:100%; height:260px; position:relative; overflow:hidden; border-radius:8px; background:#f1f5f9; }
+.footer { max-width:1400px; margin:40px auto 0; padding:24px; border-top:1px solid var(--border); text-align:center; font-size:12px; color:var(--text-muted); }
+
+.best-banner { background:linear-gradient(135deg,rgba(5,150,105,0.04),rgba(67,56,202,0.04)); border:1px solid rgba(5,150,105,0.12); border-radius:var(--radius); padding:20px 24px; margin-bottom:24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.best-banner-left h3 { font-size:16px; font-weight:700; color:var(--green); margin-bottom:4px; }
+.best-banner-left p { font-size:13px; color:var(--text-secondary); }
+.best-banner-right { display:flex; gap:24px; align-items:center; }
+.best-rate-item { text-align:center; }
+.best-rate-item .period { font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; }
+.best-rate-item .rate { font-size:22px; font-weight:800; color:var(--green); }
+.best-rate-item .bank { font-size:11px; color:var(--text-secondary); }
+
+@media(max-width:768px){
+  .header-inner { padding:12px 16px; flex-direction:column; align-items:flex-start; gap:8px; }
+  .main { padding:16px; }
+  .stats-grid { grid-template-columns:repeat(2,1fr); gap:10px; }
+  .stat-card { padding:14px; }
+  .stat-value { font-size:22px; }
+  .filter-row { gap:8px; flex-direction:column; align-items:flex-start; }
+  .filter-row>div { width:100%; }
+  .filter-btn { padding:6px 12px; font-size:12px; }
+  .search-box { max-width:none; min-width:auto; width:100%; }
+  .calc-section { grid-template-columns:1fr; }
+  .calc-form { grid-template-columns:1fr; }
+  .logo-text h1 { font-size:15px; }
+  .note-cell { max-width:150px; }
 }
-.stat-card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 20px; position: relative; overflow: hidden; transition: var(--transition); box-shadow: var(--shadow);
-}
-.stat-card:hover { border-color: var(--border-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(15,23,42,0.05); }
-.stat-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
-.stat-card:nth-child(1)::before { background: linear-gradient(90deg, var(--green), var(--accent)); }
-.stat-card:nth-child(2)::before { background: linear-gradient(90deg, var(--accent), var(--purple)); }
-.stat-card:nth-child(3)::before { background: linear-gradient(90deg, var(--orange), var(--gold)); }
-.stat-card:nth-child(4)::before { background: linear-gradient(90deg, var(--purple), var(--accent)); }
-.stat-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
-.stat-value { font-size: 28px; font-weight: 800; letter-spacing: -1px; }
-.stat-value .unit { font-size: 16px; font-weight: 500; color: var(--text-secondary); }
-.stat-sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
-
-.filter-section { margin-bottom: 24px; }
-.filter-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 12px; }
-.filter-label { font-size: 13px; font-weight: 600; color: var(--text-secondary); min-width: 60px; }
-.filter-group { display: flex; gap: 4px; background: #f1f5f9; border-radius: var(--radius-sm); padding: 3px; border: 1px solid var(--border); }
-.filter-btn {
-  padding: 8px 16px; border: none; border-radius: 6px; background: transparent;
-  color: var(--text-secondary); font-size: 13px; font-weight: 500; cursor: pointer;
-  transition: var(--transition); white-space: nowrap;
-}
-.filter-btn:hover { color: var(--text); background: rgba(15,23,42,0.05); }
-.filter-btn.active { background: var(--accent); color: white; box-shadow: 0 2px 8px rgba(67,56,202,0.2); }
-.filter-btn.active.green { background: var(--green); box-shadow: 0 2px 8px rgba(5,150,105,0.25); }
-.filter-btn.active.orange { background: var(--orange); color: white; box-shadow: 0 2px 8px rgba(217,119,6,0.25); }
-.filter-btn.active.purple { background: var(--purple); box-shadow: 0 2px 8px rgba(124,58,237,0.25); }
-.search-box {
-  display: flex; align-items: center; gap: 8px; background: #ffffff; border: 1px solid var(--border);
-  border-radius: var(--radius-sm); padding: 8px 14px; flex: 1; min-width: 200px; max-width: 320px; transition: var(--transition);
-}
-.search-box:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
-.search-box svg { color: var(--text-muted); flex-shrink: 0; }
-.search-box input { background: none; border: none; outline: none; color: var(--text); font-size: 14px; width: 100%; }
-.search-box input::placeholder { color: var(--text-muted); }
-
-.table-wrapper { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-.table-header-bar { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--border); }
-.table-title { font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
-.bank-count { background: var(--accent-glow); color: var(--accent-light); font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 12px; }
-.sort-hint { font-size: 12px; color: var(--text-muted); }
-.table-scroll { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; min-width: 700px; }
-thead th {
-  padding: 14px 16px; font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
-  text-align: left; border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 0;
-  cursor: pointer; user-select: none; transition: var(--transition); white-space: nowrap;
-}
-thead th:hover { color: var(--text-secondary); background: var(--bg); }
-thead th.sorted { color: var(--accent-light); }
-thead th .sort-arrow { margin-left: 4px; font-size: 10px; }
-tbody tr { border-bottom: 1px solid var(--border); transition: var(--transition); }
-tbody tr:hover { background: var(--bg); }
-tbody tr.best-rate { background: rgba(5,150,105,0.03); }
-tbody tr.best-rate:hover { background: rgba(5,150,105,0.06); }
-tbody td { padding: 14px 16px; font-size: 14px; white-space: nowrap; vertical-align: middle; }
-.bank-cell { display: flex; align-items: center; gap: 12px; min-width: 250px; }
-.bank-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; flex-shrink: 0; color: white; letter-spacing: 0.5px; }
-.bank-info { display: flex; flex-direction: column; gap: 3px; }
-.bank-title-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.bank-name { font-weight: 700; font-size: 14px; color: var(--text); }
-.bank-eng { font-size: 11px; font-weight: 600; color: var(--text-muted); }
-.bank-type { font-size: 10px; padding: 1px 6px; border-radius: 4px; font-weight: 600; display: inline-block; white-space: nowrap; }
-.bank-type.traditional { background: rgba(67,56,202,0.06); color: var(--accent-light); }
-.bank-type.virtual { background: rgba(14,165,233,0.08); color: #0284c7; }
-.rate-cell { font-weight: 700; font-size: 16px; font-variant-numeric: tabular-nums; }
-.rate-cell.best { color: var(--green); position: relative; }
-.rate-cell.best::after { content: '👑'; font-size: 10px; margin-left: 4px; vertical-align: super; }
-.rate-cell.good { color: var(--accent-light); }
-.rate-cell.low { color: var(--text-muted); }
-.period-cell { font-size: 13px; color: var(--text-secondary); font-weight: 500; }
-.min-deposit { font-size: 13px; color: var(--text-secondary); }
-.min-deposit .no-min { color: var(--green); font-weight: 500; }
-.note-cell { font-size: 12px; color: var(--text-muted); max-width: 220px; white-space: normal; line-height: 1.5; }
-.loading { text-align: center; padding: 40px; color: var(--text-muted); font-size: 14px; }
-
-.calc-section { margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.calc-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
-.calc-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
-.calc-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.form-group { display: flex; flex-direction: column; gap: 6px; }
-.form-group.full { grid-column: 1 / -1; }
-.form-group label { font-size: 12px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
-.form-group select, .form-group input { padding: 10px 14px; background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text); font-size: 14px; outline: none; transition: var(--transition); }
-.form-group select:focus, .form-group input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
-.form-group select { cursor: pointer; }
-.calc-btn { padding: 12px; background: linear-gradient(135deg, var(--accent), var(--purple)); border: none; border-radius: var(--radius-sm); color: white; font-size: 14px; font-weight: 700; cursor: pointer; transition: var(--transition); margin-top: 8px; }
-.calc-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(67,56,202,0.25); }
-.calc-result { margin-top: 20px; padding: 20px; background: var(--green-glow); border: 1px solid rgba(5,150,105,0.15); border-radius: var(--radius-sm); display: none; }
-.calc-result.show { display: block; animation: fadeIn 0.3s ease; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-.result-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; }
-.result-row + .result-row { border-top: 1px solid rgba(5,150,105,0.08); }
-.result-label { font-size: 13px; color: var(--text-secondary); }
-.result-value { font-size: 15px; font-weight: 700; }
-.result-value.highlight { color: var(--green); font-size: 22px; }
-.chart-wrapper { width: 100%; height: 260px; position: relative; overflow: hidden; border-radius: var(--radius-sm); background: #f1f5f9; }
-
-.footer { max-width: 1400px; margin: 40px auto 0; padding: 24px; border-top: 1px solid var(--border); text-align: center; }
-.footer p { font-size: 12px; color: var(--text-muted); line-height: 1.8; }
-.toast { position: fixed; bottom: 24px; right: 24px; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 12px 20px; font-size: 13px; color: var(--text); box-shadow: var(--shadow-lg); transform: translateY(100px); opacity: 0; transition: var(--transition); z-index: 200; display: flex; align-items: center; gap: 8px; }
-.toast.show { transform: translateY(0); opacity: 1; }
-
-.best-banner { background: linear-gradient(135deg, rgba(5,150,105,0.04), rgba(67,56,202,0.04)); border: 1px solid rgba(5,150,105,0.12); border-radius: var(--radius); padding: 20px 24px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.best-banner-left h3 { font-size: 16px; font-weight: 700; color: var(--green); margin-bottom: 4px; }
-.best-banner-left p { font-size: 13px; color: var(--text-secondary); }
-.best-banner-right { display: flex; gap: 24px; align-items: center; }
-.best-rate-item { text-align: center; }
-.best-rate-item .period { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
-.best-rate-item .rate { font-size: 22px; font-weight: 800; color: var(--green); }
-.best-rate-item .bank { font-size: 11px; color: var(--text-secondary); }
-
-@media (max-width: 768px) {
-  .header-inner { padding: 12px 16px; flex-direction: column; align-items: flex-start; gap: 8px; }
-  .header-right { width: 100%; justify-content: space-between; }
-  .main { padding: 16px; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .stat-card { padding: 14px; }
-  .stat-value { font-size: 22px; }
-  .filter-row { gap: 8px; flex-direction: column; align-items: flex-start; }
-  .filter-row > div { width: 100%; }
-  .filter-btn { padding: 6px 12px; font-size: 12px; }
-  .search-box { max-width: none; min-width: auto; width: 100%; }
-  .calc-section { grid-template-columns: 1fr; }
-  .calc-form { grid-template-columns: 1fr; }
-  .logo-text h1 { font-size: 15px; }
-  .update-time { display: none; }
-  .table-header-bar { padding: 12px 16px; flex-wrap: wrap; gap: 8px; }
-  .note-cell { max-width: 150px; }
-}
-.no-results { text-align: center; padding: 60px 20px; color: var(--text-muted); }
-.no-results svg { margin-bottom: 12px; opacity: 0.3; }
-.no-results p { font-size: 15px; }
 </style>
 </head>
 <body>
@@ -232,9 +137,8 @@ tbody td { padding: 14px 16px; font-size: 14px; white-space: nowrap; vertical-al
     <div class="header-right">
       <div class="live-badge">
         <span class="live-dot"></span>
-        <span id="statusText">讀取中...</span>
+        <span id="statusText">連線中...</span>
       </div>
-      <span class="update-time" id="updateTime"></span>
     </div>
   </div>
 </header>
@@ -259,7 +163,7 @@ tbody td { padding: 14px 16px; font-size: 14px; white-space: nowrap; vertical-al
     <div class="stat-card">
       <div class="stat-label">數據更新</div>
       <div class="stat-value" id="statUpdateStatus">—</div>
-      <div class="stat-sub" id="statUpdateSub">自動讀取中...</div>
+      <div class="stat-sub" id="statUpdateSub">實時同步中...</div>
     </div>
   </div>
 
@@ -280,8 +184,8 @@ tbody td { padding: 14px 16px; font-size: 14px; white-space: nowrap; vertical-al
         <button class="filter-btn" data-value="RMB">🇨🇳 人民幣 RMB</button>
       </div>
     </div>
-    <div class="filter-row" style="justify-content: space-between;">
-      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+    <div class="filter-row" style="justify-content:space-between;">
+      <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
         <span class="filter-label">銀行類型</span>
         <div class="filter-group" id="typeFilter">
           <button class="filter-btn active" data-value="all">全部</button>
@@ -303,7 +207,7 @@ tbody td { padding: 14px 16px; font-size: 14px; white-space: nowrap; vertical-al
     </div>
     <div class="table-scroll">
       <table>
-        <thead id="tableHead"><tr><th colspan="5" class="loading">⏳ 自動讀取利率數據...</th></tr></thead>
+        <thead id="tableHead"><tr><th colspan="5" class="loading">⏳ 連線 Apps Script...</th></tr></thead>
         <tbody id="tableBody"></tbody>
       </table>
     </div>
@@ -315,20 +219,11 @@ tbody td { padding: 14px 16px; font-size: 14px; white-space: nowrap; vertical-al
       <div class="calc-form">
         <div class="form-group">
           <label>存款貨幣</label>
-          <select id="calcCurrency">
-            <option value="HKD">港元 HKD</option>
-            <option value="USD">美元 USD</option>
-            <option value="RMB">人民幣 RMB</option>
-          </select>
+          <select id="calcCurrency"><option value="HKD">港元 HKD</option><option value="USD">美元 USD</option><option value="RMB">人民幣 RMB</option></select>
         </div>
         <div class="form-group">
           <label>存款期</label>
-          <select id="calcPeriod">
-            <option value="1">1 個月</option>
-            <option value="3" selected>3 個月</option>
-            <option value="6">6 個月</option>
-            <option value="12">12 個月</option>
-          </select>
+          <select id="calcPeriod"><option value="1">1 個月</option><option value="3" selected>3 個月</option><option value="6">6 個月</option><option value="12">12 個月</option></select>
         </div>
         <div class="form-group">
           <label>存款金額</label>
@@ -362,17 +257,12 @@ tbody td { padding: 14px 16px; font-size: 14px; white-space: nowrap; vertical-al
   <p>數據更新：<span id="footerTime"></span></p>
   <p style="margin-top:8px;">© 2026 HK Deposit Rates</p>
 </footer>
-<div class="toast" id="toast"></div>
 
 <script>
 // =============================================
-// 設定：自動同步後端 URL
+// 設定：你條 Apps Script URL（重新 Deploy 後更新呢度）
 // =============================================
-// 揀一個方案，貼 URL 落去，網站就會自動讀最新利率：
-// 方案 A (Google Apps Script): const API_URL = 'https://script.google.com/macros/s/xxx/exec';
-// 方案 B (Cloudflare Worker):  const API_URL = 'https://your-worker.your-subdomain.workers.dev/api/rates';
-// 方案 C (GitHub Pages 本地):  const API_URL = null; // 自動讀取同目錄 rates.json
-const API_URL = 'https://script.google.com/macros/s/AKfycbwN4__08ifufnAb3O6Y40wdXvmSErHFWWCpdki0acqzBrSNECL2WJiB3YxeFnjSC0o0qw/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxwDHuNSbRRTv8Y3SyIMQg4hMJXxxF29gT7zt_U9F23QIR0zqtNuI1_9qjxzAAfxACWMA/exec';
 // =============================================
 
 const BANK_COLORS = {
@@ -392,88 +282,129 @@ const BANK_ENGLISH_NAMES = {
   '大眾銀行':'Public Bank','交通銀行':'BOCOM','建設銀行亞洲':'CCB Asia','花旗銀行':'Citibank','大新銀行':'Dah Sing Bank','創興銀行':'Chong Hing Bank',
   'OCBC':'OCBC Bank','富融銀行':'Fusion Bank','匯立銀行':'WeLab Bank','象象銀行':'EleBank','眾安銀行':'ZA Bank','Mox銀行':'Mox Bank','理慧銀行':'Livi Bank'
 };
-const CURRENCY_TEXTS = {'HKD':'港元','USD':'美元','RMB':'人民幣'};
 
-let allData = { HKD:[], USD:[], RMB:[] };
+let allData = {};
 let state = { currency:'HKD', bankType:'all', search:'', sortCol:'rate', sortDir:-1 };
-let lastUpdated = '';
 
-function formatRate(v){ return v!=null? v.toFixed(2)+'%' : '—'; }
-function getSym(c){ return c==='HKD'?'HK$':c==='USD'?'US$':'¥'; }
-function showToast(msg){ const t=document.getElementById('toast'); t.innerHTML=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),3000); }
-function getFiltered(){ const data=allData[state.currency]||[]; return data.filter(b=>{ if(state.bankType!=='all' && b.type!==state.bankType) return false; if(state.search && !b.bank.toLowerCase().includes(state.search.toLowerCase())) return false; return true; }); }
-function getBest(data){ let max=-1, bank=''; data.forEach(b=>{ if(b.bestRate>max){max=b.bestRate;bank=b.bank;} }); return {rate:max,bank}; }
+// ===== JSONP 載入（完全冇 CORS 問題） =====
+function loadRates() {
+  return new Promise((resolve) => {
+    const callbackName = 'rates_cb_' + Date.now();
+    const script = document.createElement('script');
+    let done = false;
+    
+    function cleanup() {
+      if (script.parentNode) script.parentNode.removeChild(script);
+      delete window[callbackName];
+    }
+    
+    // 10 秒超時
+    const timeout = setTimeout(() => {
+      if (!done) {
+        done = true;
+        cleanup();
+        showError('連線超時');
+        resolve(false);
+      }
+    }, 10000);
+    
+    window[callbackName] = function(data) {
+      if (done) return;
+      done = true;
+      clearTimeout(timeout);
+      cleanup();
+      
+      if (data && data.rates) {
+        allData = data.rates;
+        const updated = data.updated_at ? new Date(data.updated_at).toLocaleDateString('zh-HK') : '剛剛';
+        document.getElementById('statusText').textContent = '✅ 已連線';
+        document.getElementById('statUpdateSub').textContent = 'Apps Script 實時同步';
+        document.getElementById('footerTime').textContent = updated;
+        resolve(true);
+      } else {
+        showError('數據格式錯誤');
+        resolve(false);
+      }
+    };
+    
+    script.onerror = function() {
+      if (done) return;
+      done = true;
+      clearTimeout(timeout);
+      cleanup();
+      showError('Apps Script 連線失敗');
+      resolve(false);
+    };
+    
+    script.src = APPS_SCRIPT_URL + '?callback=' + callbackName + '&t=' + Date.now();
+    document.head.appendChild(script);
+  });
+}
+
+function showError(msg) {
+  document.getElementById('statusText').textContent = '❌ ' + msg;
+  document.getElementById('statUpdateSub').textContent = '請檢查 Apps Script URL';
+  document.getElementById('tableHead').innerHTML = '<tr><th colspan="5" style="text-align:center;color:#ef4444;padding:40px;">⚠️ ' + msg + ' — 請重新 Deploy Apps Script</th></tr>';
+}
+
+function getFiltered() { return (allData[state.currency]||[]).filter(b=>{ if(state.bankType!=='all'&&b.type!==state.bankType)return false; if(state.search&&!b.bank.toLowerCase().includes(state.search.toLowerCase()))return false; return true; }); }
+function getBest(data){ let max=-1,bank=''; data.forEach(b=>{if(b.bestRate>max){max=b.bestRate;bank=b.bank;}}); return {rate:max,bank}; }
 
 function render(){
-  const data=getFiltered(); const c=state.currency; const cur=CURRENCY_TEXTS[c]||'港元'; const best=getBest(allData[c]||[]);
-  const lblBest=document.getElementById('lblBestRate'); if(lblBest) lblBest.textContent=`最高${cur}定存年利率`;
-  const lblAvg=document.getElementById('lblAvgRate'); if(lblAvg) lblAvg.textContent=`平均${cur}最高利率`;
-  const bSub=document.getElementById('bannerSubtext'); if(bSub) bSub.textContent=`${cur}定期存款 — 即時比較各大銀行最高利率`;
-
+  const data=getFiltered(); const c=state.currency; const cur={HKD:'港元',USD:'美元',RMB:'人民幣'}[c]||'港元'; const best=getBest(allData[c]||[]);
+  document.getElementById('lblBestRate').textContent='最高'+cur+'定存年利率';
   document.getElementById('statBestRate').innerHTML=best.rate>0?best.rate.toFixed(2)+'<span class="unit">%</span>':'—';
   document.getElementById('statBestBank').textContent=best.rate>0?best.bank:'N/A';
   document.getElementById('statBankCount').innerHTML=(allData[c]?allData[c].length:0)+'<span class="unit">間</span>';
-  let total=0, count=0; (allData[c]||[]).forEach(b=>{total+=b.bestRate;count++;});
-  document.getElementById('statAvgRate').innerHTML=count>0?(total/count).toFixed(2)+'<span class="unit">%</span>':'—';
-  document.getElementById('statUpdateStatus').innerHTML=lastUpdated||'—';
-  document.getElementById('statUpdateSub').textContent=lastUpdated?'來自自動同步':'使用離線數據';
+  let t=0,n=0; (allData[c]||[]).forEach(b=>{t+=b.bestRate;n++;});
+  document.getElementById('statAvgRate').innerHTML=n>0?(t/n).toFixed(2)+'<span class="unit">%</span>':'—';
 
   const bRates=document.getElementById('bannerRates'); bRates.innerHTML='';
-  const top3=[...(allData[c]||[])].sort((a,b)=>b.bestRate-a.bestRate).slice(0,3);
-  top3.forEach(b=>{
+  [...(allData[c]||[])].sort((a,b)=>b.bestRate-a.bestRate).slice(0,3).forEach(b=>{
     const d=document.createElement('div'); d.className='best-rate-item';
     d.innerHTML=`<div class="period">${b.bestPeriod}</div><div class="rate">${b.bestRate.toFixed(2)}%</div><div class="bank">${b.bank}</div>`;
     bRates.appendChild(d);
   });
+  document.getElementById('bannerSubtext').textContent=cur+'定期存款 — 即時比較各大銀行最高利率';
   document.getElementById('bankCountBadge').textContent=data.length+' 間銀行';
+  
   const sorted=[...data].sort((a,b)=>{ if(state.sortCol==='bank') return state.sortDir*a.bank.localeCompare(b.bank,'zh'); return state.sortDir*(a.bestRate-b.bestRate); });
-
-  const thead=document.getElementById('tableHead');
   const isRate=state.sortCol==='rate', isBank=state.sortCol==='bank';
-  thead.innerHTML='<tr><th data-col="bank" class="'+(isBank?'sorted':'')+'">銀行'+(isBank?'<span class="sort-arrow">'+(state.sortDir===1?'▲':'▼')+'</span>':'')+'</th><th data-col="rate" class="'+(isRate?'sorted':'')+'">最高年利率'+(isRate?'<span class="sort-arrow">'+(state.sortDir===1?'▲':'▼')+'</span>':'')+'</th><th style="cursor:default">適用期數</th><th style="cursor:default">最低存款額</th><th style="cursor:default">備註</th></tr>';
-  thead.querySelectorAll('th[data-col]').forEach(th=>{ th.addEventListener('click',()=>{ const col=th.dataset.col; if(state.sortCol===col) state.sortDir*=-1; else { state.sortCol=col; state.sortDir=col==='rate'?-1:1; } render(); }); });
+  const th=document.getElementById('tableHead');
+  th.innerHTML='<tr><th data-col="bank" class="'+(isBank?'sorted':'')+'">銀行'+(isBank?'<span style="margin-left:4px;font-size:10px">'+(state.sortDir===1?'▲':'▼')+'</span>':'')+'</th><th data-col="rate" class="'+(isRate?'sorted':'')+'">最高年利率'+(isRate?'<span style="margin-left:4px;font-size:10px">'+(state.sortDir===1?'▲':'▼')+'</span>':'')+'</th><th style="cursor:default">適用期數</th><th style="cursor:default">最低存款額</th><th style="cursor:default">備註</th></tr>';
+  th.querySelectorAll('th[data-col]').forEach(th=>{ th.addEventListener('click',()=>{ const col=th.dataset.col; if(state.sortCol===col) state.sortDir*=-1; else { state.sortCol=col; state.sortDir=col==='rate'?-1:1; } render(); }); });
 
-  const tbody=document.getElementById('tableBody');
-  if(sorted.length===0){ tbody.innerHTML='<tr><td colspan="5"><div class="no-results"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><p>搵唔到符合條件嘅銀行</p></div></td></tr>'; return; }
+  const tb=document.getElementById('tableBody');
+  if(!sorted.length){ tb.innerHTML='<tr><td colspan="5" style="text-align:center;padding:60px;color:#64748b"><p>搵唔到符合條件嘅銀行</p></td></tr>'; return; }
   let html='';
   sorted.forEach(b=>{
     const isBest=b.bestRate===best.rate, isGood=b.bestRate>=best.rate*0.9;
     let cls='rate-cell'; if(isBest) cls+=' best'; else if(isGood) cls+=' good'; else cls+=' low';
     const color=BANK_COLORS[b.bank]||'#6b7280', initial=BANK_INITIALS[b.bank]||b.bank.substring(0,2), eng=BANK_ENGLISH_NAMES[b.bank]||'';
     const noMin=b.minDeposit && b.minDeposit.includes('沒有');
-    html+=`<tr class="${isBest?'best-rate':''}"><td><div class="bank-cell"><div class="bank-icon" style="background:${color}">${initial}</div><div class="bank-info"><div class="bank-title-row"><span class="bank-name">${b.bank}</span><span class="bank-type ${b.type}">${b.type==='traditional'?'傳統銀行':'數字銀行'}</span></div><span class="bank-eng">${eng}</span></div></div></td><td class="${cls}">${b.bestRate.toFixed(2)}%</td><td class="period-cell">${b.bestPeriod||'—'}</td><td class="min-deposit">${noMin?'<span class="no-min">✓ '+b.minDeposit+'</span>':b.minDeposit}</td><td class="note-cell">${b.note||'—'}</td></tr>`;
+    html+=`<tr class="${isBest?'best-rate':''}"><td><div class="bank-cell"><div class="bank-icon" style="background:${color}">${initial}</div><div class="bank-info"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="bank-name">${b.bank}</span><span class="bank-type ${b.type}">${b.type==='traditional'?'傳統銀行':'數字銀行'}</span></div><span class="bank-eng">${eng}</span></div></div></td><td class="${cls}">${b.bestRate.toFixed(2)}%</td><td class="period-cell">${b.bestPeriod||'—'}</td><td class="min-deposit">${noMin?'<span class="no-min">✓ '+b.minDeposit+'</span>':b.minDeposit}</td><td class="note-cell">${b.note||'—'}</td></tr>`;
   });
-  tbody.innerHTML=html;
+  tb.innerHTML=html;
   drawChart();
 }
 
 function setupFilters(){
-  document.querySelectorAll('#currencyFilter .filter-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      document.querySelectorAll('#currencyFilter .filter-btn').forEach(b=>b.classList.remove('active','green','orange','purple'));
-      btn.classList.add('active'); state.currency=btn.dataset.value;
-      if(state.currency==='HKD') btn.classList.add('green'); else if(state.currency==='USD') btn.classList.add('orange'); else btn.classList.add('purple');
-      render(); updateCalc();
-    });
-  });
-  document.querySelectorAll('#typeFilter .filter-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>{ document.querySelectorAll('#typeFilter .filter-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); state.bankType=btn.dataset.value; render(); });
-  });
+  document.querySelectorAll('#currencyFilter .filter-btn').forEach(btn=>{ btn.addEventListener('click',()=>{ document.querySelectorAll('#currencyFilter .filter-btn').forEach(b=>b.classList.remove('active','green','orange','purple')); btn.classList.add('active'); state.currency=btn.dataset.value; if(state.currency==='HKD')btn.classList.add('green'); else if(state.currency==='USD')btn.classList.add('orange'); else btn.classList.add('purple'); render(); updateCalc(); }); });
+  document.querySelectorAll('#typeFilter .filter-btn').forEach(btn=>{ btn.addEventListener('click',()=>{ document.querySelectorAll('#typeFilter .filter-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); state.bankType=btn.dataset.value; render(); }); });
   document.getElementById('searchInput').addEventListener('input',e=>{ state.search=e.target.value.trim(); render(); });
 }
 function updateCalc(){ const best=getBest(allData[state.currency]||[]); if(best.rate>0) document.getElementById('calcRate').value=best.rate.toFixed(2); }
 function setupCalc(){
   document.getElementById('calcBtn').addEventListener('click',()=>{
-    const currency=document.getElementById('calcCurrency').value, period=parseInt(document.getElementById('calcPeriod').value),
-          amount=parseFloat(document.getElementById('calcAmount').value), rate=parseFloat(document.getElementById('calcRate').value);
-    if(!amount||amount<=0){ showToast('⚠️ 請輸入有效嘅存款金額'); return; }
-    if(!rate||rate<0){ showToast('⚠️ 請輸入有效嘅年利率'); return; }
-    const interest=amount*(rate/100)*(period/12), total=amount+interest, sym=getSym(currency);
-    document.getElementById('resPrincipal').textContent=sym+amount.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-    document.getElementById('resPeriod').textContent=period+' 個月';
-    document.getElementById('resRate').textContent=rate.toFixed(2)+'%';
-    document.getElementById('resInterest').textContent=sym+interest.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-    document.getElementById('resTotal').textContent=sym+total.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+    const c=document.getElementById('calcCurrency').value, p=parseInt(document.getElementById('calcPeriod').value), a=parseFloat(document.getElementById('calcAmount').value), r=parseFloat(document.getElementById('calcRate').value);
+    if(!a||a<=0){ alert('⚠️ 請輸入有效嘅存款金額'); return; }
+    if(!r||r<0){ alert('⚠️ 請輸入有效嘅年利率'); return; }
+    const i=a*(r/100)*(p/12), t=a+i, s={HKD:'HK$',USD:'US$',RMB:'¥'}[c];
+    document.getElementById('resPrincipal').textContent=s+a.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+    document.getElementById('resPeriod').textContent=p+' 個月';
+    document.getElementById('resRate').textContent=r.toFixed(2)+'%';
+    document.getElementById('resInterest').textContent=s+i.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+    document.getElementById('resTotal').textContent=s+t.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
     document.getElementById('calcResult').classList.add('show');
   });
   document.getElementById('calcCurrency').addEventListener('change',e=>{
@@ -483,144 +414,38 @@ function setupCalc(){
   });
 }
 function drawChart(){
-  const canvas=document.getElementById('rateChart'); const ctx=canvas.getContext('2d');
-  const dpr=window.devicePixelRatio||1; const rect=canvas.parentElement.getBoundingClientRect();
-  canvas.width=rect.width*dpr; canvas.height=rect.height*dpr; canvas.style.width=rect.width+'px'; canvas.style.height=rect.height+'px'; ctx.scale(dpr,dpr);
-  const W=rect.width, H=rect.height, pad={top:20,right:20,bottom:80,left:50};
+  const c=document.getElementById('rateChart'), ctx=c.getContext('2d');
+  const dpr=window.devicePixelRatio||1, r=c.parentElement.getBoundingClientRect();
+  c.width=r.width*dpr; c.height=r.height*dpr; c.style.width=r.width+'px'; c.style.height=r.height+'px'; ctx.scale(dpr,dpr);
+  const W=r.width, H=r.height, pad={top:20,right:20,bottom:80,left:50};
   ctx.clearRect(0,0,W,H);
-  const data=(allData[state.currency]||[]).sort((a,b)=>b.bestRate-a.bestRate).slice(0,12);
-  if(data.length===0) return;
-  const maxRate=Math.max(...data.map(d=>d.bestRate))*1.1;
-  const chartW=W-pad.left-pad.right, chartH=H-pad.top-pad.bottom;
-  const barWidth=Math.min((chartW/data.length)*0.6,40);
-  const gap=(chartW-barWidth*data.length)/(data.length+1);
+  const d=(allData[state.currency]||[]).sort((a,b)=>b.bestRate-a.bestRate).slice(0,12);
+  if(!d.length) return;
+  const max=Math.max(...d.map(x=>x.bestRate))*1.1, cw=W-pad.left-pad.right, ch=H-pad.top-pad.bottom;
+  const bw=Math.min((cw/d.length)*0.6,40), gap=(cw-bw*d.length)/(d.length+1);
   ctx.strokeStyle='rgba(15,23,42,0.06)'; ctx.lineWidth=1;
-  for(let i=0;i<=5;i++){ const y=pad.top+(chartH/5)*i; ctx.beginPath(); ctx.moveTo(pad.left,y); ctx.lineTo(W-pad.right,y); ctx.stroke(); const val=maxRate*(1-i/5); ctx.fillStyle='#64748b'; ctx.font='11px -apple-system, sans-serif'; ctx.textAlign='right'; ctx.fillText(val.toFixed(1)+'%',pad.left-8,y+4); }
-  data.forEach((b,i)=>{
-    const x=pad.left+gap+i*(barWidth+gap); const barH=(b.bestRate/maxRate)*chartH; const y=pad.top+chartH-barH;
-    const isBest=i===0, color=isBest?'#059669':'#4f46e5';
-    const grad=ctx.createLinearGradient(x,y,x,pad.top+chartH); grad.addColorStop(0,color); grad.addColorStop(1,color+'40');
-    ctx.fillStyle=grad; ctx.beginPath(); ctx.roundRect(x,y,barWidth,barH,4); ctx.fill();
-    ctx.fillStyle=isBest?'#059669':'#475569'; ctx.font='bold 11px -apple-system, sans-serif'; ctx.textAlign='center'; ctx.fillText(b.bestRate.toFixed(2)+'%',x+barWidth/2,y-6);
-    ctx.save(); ctx.translate(x+barWidth/2,pad.top+chartH+14); ctx.rotate(-Math.PI/4); ctx.fillStyle='#64748b'; ctx.font='10px -apple-system, sans-serif'; ctx.textAlign='right'; ctx.fillText(b.bank,0,0); ctx.restore();
+  for(let i=0;i<=5;i++){ const y=pad.top+(ch/5)*i; ctx.beginPath(); ctx.moveTo(pad.left,y); ctx.lineTo(W-pad.right,y); ctx.stroke(); ctx.fillStyle='#64748b'; ctx.font='11px sans-serif'; ctx.textAlign='right'; ctx.fillText((max*(1-i/5)).toFixed(1)+'%',pad.left-8,y+4); }
+  d.forEach((b,i)=>{
+    const x=pad.left+gap+i*(bw+gap), bh=(b.bestRate/max)*ch, y=pad.top+ch-bh;
+    const isBest=i===0, col=isBest?'#059669':'#4f46e5';
+    const g=ctx.createLinearGradient(x,y,x,pad.top+ch); g.addColorStop(0,col); g.addColorStop(1,col+'40');
+    ctx.fillStyle=g; ctx.beginPath(); ctx.roundRect(x,y,bw,bh,4); ctx.fill();
+    ctx.fillStyle=isBest?'#059669':'#475569'; ctx.font='bold 11px sans-serif'; ctx.textAlign='center'; ctx.fillText(b.bestRate.toFixed(2)+'%',x+bw/2,y-6);
+    ctx.save(); ctx.translate(x+bw/2,pad.top+ch+14); ctx.rotate(-Math.PI/4); ctx.fillStyle='#64748b'; ctx.font='10px sans-serif'; ctx.textAlign='right'; ctx.fillText(b.bank,0,0); ctx.restore();
   });
 }
 
-// ===== 自動讀取數據 =====
-async function loadRates(){
-  let loaded = false;
-  
-  // 1. 如果有 API_URL，優先讀後端
-  if (API_URL) {
-    try {
-      const res = await fetch(API_URL + '?t=' + Date.now());
-      if (res.ok) {
-        const json = await res.json();
-        if (json.rates) {
-          allData = json.rates;
-          lastUpdated = json.updated_at ? new Date(json.updated_at).toLocaleDateString('zh-HK') : '剛剛';
-          document.getElementById('statusText').textContent = '✅ 已連線後端';
-          loaded = true;
-        }
-      }
-    } catch(e) { console.log('API fetch failed:', e); }
-  }
-  
-  // 2. 如果冇 API_URL 或讀後端失敗，試讀本地 rates.json
-  if (!loaded) {
-    try {
-      const res = await fetch('rates.json?t=' + Date.now());
-      if (res.ok) {
-        const json = await res.json();
-        if (json.rates) {
-          allData = json.rates;
-          lastUpdated = json.updated_at ? new Date(json.updated_at).toLocaleDateString('zh-HK') : '本地';
-          document.getElementById('statusText').textContent = '✅ 已載入本地';
-          loaded = true;
-        }
-      }
-    } catch(e) { console.log('Local rates.json fetch failed:', e); }
-  }
-  
-  // 3. 全部失敗，用 inline fallback
-  if (!loaded) {
-    allData = getInlineRates();
-    lastUpdated = '離線';
-    document.getElementById('statusText').textContent = '⚠️ 離線數據';
-  }
-  
-  document.getElementById('updateTime').textContent = '更新：' + lastUpdated;
-  document.getElementById('footerTime').textContent = lastUpdated;
-  
-  render();
-  updateCalc();
+async function init(){
+  const ok = await loadRates();
+  if (!ok) return;
   setupFilters();
   setupCalc();
-  let resizeTimer; window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(drawChart,200);});
+  render();
+  updateCalc();
+  let rt; window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(drawChart,200);});
 }
 
-function getInlineRates() {
-  return {
-    HKD: [
-      {bank:'富融銀行',type:'virtual',bestRate:2.90,bestPeriod:'12個月',minDeposit:'沒有最低',note:''},
-      {bank:'象象銀行',type:'virtual',bestRate:2.90,bestPeriod:'12個月',minDeposit:'沒有最低',note:''},
-      {bank:'匯立銀行',type:'virtual',bestRate:2.80,bestPeriod:'12個月',minDeposit:'HKD 10',note:''},
-      {bank:'Mox銀行',type:'virtual',bestRate:2.70,bestPeriod:'12個月',minDeposit:'HKD 1',note:''},
-      {bank:'富邦銀行',type:'traditional',bestRate:2.70,bestPeriod:'3-12個月',minDeposit:'HKD 500,000',note:'大額存款優惠'},
-      {bank:'理慧銀行',type:'virtual',bestRate:2.50,bestPeriod:'3-6個月',minDeposit:'HKD 50,000',note:''},
-      {bank:'建設銀行亞洲',type:'traditional',bestRate:2.55,bestPeriod:'3個月',minDeposit:'HKD 10,000',note:''},
-      {bank:'工銀亞洲',type:'traditional',bestRate:2.55,bestPeriod:'3個月',minDeposit:'HKD 50,000',note:''},
-      {bank:'南洋商業銀行',type:'traditional',bestRate:2.65,bestPeriod:'3個月',minDeposit:'HKD 100,000',note:''},
-      {bank:'上海商業銀行',type:'traditional',bestRate:2.63,bestPeriod:'3個月',minDeposit:'HKD 1,000',note:''},
-      {bank:'中信銀行(國際)',type:'traditional',bestRate:2.60,bestPeriod:'12個月',minDeposit:'HKD 10,000',note:''},
-      {bank:'東亞銀行',type:'traditional',bestRate:2.45,bestPeriod:'3-6個月',minDeposit:'HKD 10,000',note:''},
-      {bank:'渣打銀行',type:'traditional',bestRate:2.40,bestPeriod:'3個月',minDeposit:'HKD 10,000',note:''},
-      {bank:'中銀香港',type:'traditional',bestRate:2.40,bestPeriod:'3-6個月',minDeposit:'HKD 10,000',note:''},
-      {bank:'恒生銀行',type:'traditional',bestRate:2.40,bestPeriod:'3個月',minDeposit:'HKD 10,000',note:''},
-      {bank:'滙豐銀行',type:'traditional',bestRate:2.30,bestPeriod:'3個月',minDeposit:'HKD 10,000',note:''},
-      {bank:'大眾銀行',type:'traditional',bestRate:2.35,bestPeriod:'1-12個月',minDeposit:'HKD 100,000',note:''},
-      {bank:'大新銀行',type:'traditional',bestRate:2.40,bestPeriod:'3個月',minDeposit:'HKD 200,000',note:''},
-      {bank:'星展銀行',type:'traditional',bestRate:2.40,bestPeriod:'3個月',minDeposit:'HKD 10,000',note:''},
-      {bank:'招商永隆銀行',type:'traditional',bestRate:2.00,bestPeriod:'3-12個月',minDeposit:'HKD 500,000',note:''},
-      {bank:'眾安銀行',type:'virtual',bestRate:2.01,bestPeriod:'12個月',minDeposit:'HKD 1',note:''}
-    ],
-    USD: [
-      {bank:'富邦銀行',type:'traditional',bestRate:4.00,bestPeriod:'3個月',minDeposit:'USD 65,000',note:'新資金或網上開立優惠可達4%'},
-      {bank:'建設銀行亞洲',type:'traditional',bestRate:3.80,bestPeriod:'3-12個月',minDeposit:'USD 10,000',note:''},
-      {bank:'富融銀行',type:'virtual',bestRate:3.60,bestPeriod:'3個月',minDeposit:'沒有最低',note:''},
-      {bank:'恒生銀行',type:'traditional',bestRate:3.50,bestPeriod:'3-6個月',minDeposit:'USD 2,000',note:''},
-      {bank:'中銀香港',type:'traditional',bestRate:3.50,bestPeriod:'3-6個月',minDeposit:'USD 1,000',note:''},
-      {bank:'工銀亞洲',type:'traditional',bestRate:3.45,bestPeriod:'3個月',minDeposit:'USD 1,000,000',note:'大額優惠'},
-      {bank:'Mox銀行',type:'virtual',bestRate:3.35,bestPeriod:'1個月',minDeposit:'USD 1',note:''},
-      {bank:'招商永隆銀行',type:'traditional',bestRate:3.35,bestPeriod:'3個月',minDeposit:'USD 50,000',note:''},
-      {bank:'大眾銀行',type:'traditional',bestRate:3.40,bestPeriod:'3個月',minDeposit:'沒有最低',note:''},
-      {bank:'南洋商業銀行',type:'traditional',bestRate:3.35,bestPeriod:'3個月',minDeposit:'USD 13,000',note:''},
-      {bank:'上海商業銀行',type:'traditional',bestRate:3.33,bestPeriod:'3個月',minDeposit:'USD 10,000',note:''},
-      {bank:'東亞銀行',type:'traditional',bestRate:3.40,bestPeriod:'3個月',minDeposit:'USD 1,000',note:''},
-      {bank:'滙豐銀行',type:'traditional',bestRate:3.30,bestPeriod:'3個月',minDeposit:'USD 2,000',note:''},
-      {bank:'星展銀行',type:'traditional',bestRate:3.35,bestPeriod:'3個月',minDeposit:'USD 6,000',note:''},
-      {bank:'渣打銀行',type:'traditional',bestRate:3.20,bestPeriod:'3-6個月',minDeposit:'USD 2,000',note:''},
-      {bank:'象象銀行',type:'virtual',bestRate:3.15,bestPeriod:'12個月',minDeposit:'沒有最低',note:''},
-      {bank:'匯立銀行',type:'virtual',bestRate:3.05,bestPeriod:'3個月',minDeposit:'HKD 10',note:''}
-    ],
-    RMB: [
-      {bank:'富融銀行',type:'virtual',bestRate:1.55,bestPeriod:'12個月',minDeposit:'沒有最低',note:''},
-      {bank:'富邦銀行',type:'traditional',bestRate:1.50,bestPeriod:'3-12個月',minDeposit:'RMB 500,000',note:''},
-      {bank:'南洋商業銀行',type:'traditional',bestRate:1.50,bestPeriod:'12個月',minDeposit:'RMB 100,000',note:''},
-      {bank:'工銀亞洲',type:'traditional',bestRate:1.40,bestPeriod:'12個月',minDeposit:'RMB 500,000',note:''},
-      {bank:'象象銀行',type:'virtual',bestRate:1.35,bestPeriod:'6個月',minDeposit:'沒有最低',note:''},
-      {bank:'交通銀行',type:'traditional',bestRate:1.35,bestPeriod:'3個月',minDeposit:'RMB 10,000',note:''},
-      {bank:'中銀香港',type:'traditional',bestRate:1.30,bestPeriod:'12個月',minDeposit:'RMB 10,000',note:''},
-      {bank:'滙豐銀行',type:'traditional',bestRate:1.30,bestPeriod:'3-12個月',minDeposit:'RMB 10,000',note:''},
-      {bank:'大眾銀行',type:'traditional',bestRate:1.30,bestPeriod:'12個月',minDeposit:'沒有最低',note:''},
-      {bank:'恒生銀行',type:'traditional',bestRate:1.20,bestPeriod:'3-6個月',minDeposit:'RMB 10,000',note:''},
-      {bank:'渣打銀行',type:'traditional',bestRate:1.20,bestPeriod:'12個月',minDeposit:'RMB 10,000',note:''},
-      {bank:'招商永隆銀行',type:'traditional',bestRate:1.25,bestPeriod:'12個月',minDeposit:'RMB 10,000',note:''}
-    ]
-  };
-}
-
-document.addEventListener('DOMContentLoaded', loadRates);
+document.addEventListener('DOMContentLoaded', init);
 </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0e34c177e5a04cd',t:'MTc4MTg4MDExMw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0e396ba5cc761ec',t:'MTc4MTg4MzE3MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
