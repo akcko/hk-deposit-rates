@@ -1,0 +1,41 @@
+name: Auto Update Bank Rates
+
+on:
+  schedule:
+    # 香港時間每日朝早 9 點跑（UTC 1:00）
+    - cron: '0 1 * * *'
+  workflow_dispatch:  # 容許手動觸發
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Run scraper
+        run: python scraper.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "auto: update rates $(date +'%Y-%m-%d %H:%M')"
+            git push
+          fi
