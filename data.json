@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-20 06:44",
+  "updated_at": "2026-06-20 07:46",
   "rates": {
     "HKD": [
       {
@@ -14,7 +14,7 @@
       {
         "bank": "象象銀行",
         "type": "virtual",
-        "bestRate": 7.43,
+        "bestRate": 0.1,
         "bestPeriod": "12個月",
         "minDeposit": "沒有最低",
         "note": "auto-scraped",
@@ -331,7 +331,7 @@
       {
         "bank": "象象銀行",
         "type": "virtual",
-        "bestRate": 7.43,
+        "bestRate": 0.1,
         "bestPeriod": "12個月",
         "minDeposit": "沒有最低",
         "note": "auto-scraped",
@@ -387,7 +387,7 @@
       {
         "bank": "象象銀行",
         "type": "virtual",
-        "bestRate": 7.43,
+        "bestRate": 0.1,
         "bestPeriod": "6個月",
         "minDeposit": "沒有最低",
         "note": "auto-scraped",
