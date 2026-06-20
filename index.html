@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>香港定期存款利率比較</title>
 <style>
-:root{--bg:#f3f4f6;--bg-card:#fff;--border:#e2e8f0;--text:#0f172a;--text-secondary:#475569;--text-muted:#64748b;--accent:#4338ca;--green:#059669;--orange:#d97706;--purple:#7c3aed;--radius:12px;--shadow:0 4px 18px rgba(15,23,42,0.03)}
+:root{--bg:#f3f4f6;--bg-card:#fff;--border:#e2e8f0;--text:#0f172a;--text-secondary:#475569;--text-muted:#64748b;--accent:#4338ca;--accent-light:#4f46e5;--green:#059669;--orange:#d97706;--purple:#7c3aed;--radius:12px;--shadow:0 4px 18px rgba(15,23,42,0.03)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans HK',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
 .header{background:rgba(255,255,255,0.85);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
@@ -47,22 +47,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans H
 table{width:100%;border-collapse:collapse;min-width:700px}
 thead th{padding:14px 16px;font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;text-align:left;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;cursor:pointer;white-space:nowrap}
 thead th:hover{background:#f1f5f9}
+thead th.sorted{color:var(--accent-light)}
 tbody tr{border-bottom:1px solid var(--border);transition:all 0.2s}
 tbody tr:hover{background:var(--bg)}
 tbody tr.best-rate{background:rgba(5,150,105,0.03)}
 tbody td{padding:14px 16px;font-size:14px;white-space:nowrap;vertical-align:middle}
 .bank-cell{display:flex;align-items:center;gap:12px;min-width:250px}
 .bank-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:white;flex-shrink:0}
-.bank-name{font-weight:700;font-size:14px}
+.bank-name{font-weight:700;font-size:14px;color:var(--text)}
+.bank-name:hover{color:var(--accent-light);text-decoration:underline}
 .bank-eng{font-size:11px;color:var(--text-muted);font-weight:600}
 .bank-type{font-size:10px;padding:1px 6px;border-radius:4px;font-weight:600;display:inline-block}
-.bank-type.traditional{background:rgba(67,56,202,0.06);color:var(--accent)}
+.bank-type.traditional{background:rgba(67,56,202,0.06);color:var(--accent-light)}
 .bank-type.virtual{background:rgba(14,165,233,0.08);color:#0284c7}
 .rate-cell{font-weight:700;font-size:16px;font-variant-numeric:tabular-nums}
 .rate-cell.best{color:var(--green);position:relative}
 .rate-cell.best::after{content:'👑';font-size:10px;margin-left:4px;vertical-align:super}
 .period-cell{font-size:13px;color:var(--text-secondary);font-weight:500}
 .min-deposit{font-size:13px;color:var(--text-secondary)}
+.min-deposit .no-min{color:var(--green);font-weight:500}
 .note-cell{font-size:12px;color:var(--text-muted);max-width:220px;white-space:normal;line-height:1.5}
 .loading{text-align:center;padding:40px;color:var(--text-muted)}
 .error-msg{text-align:center;padding:40px;color:#ef4444}
@@ -79,7 +82,6 @@ tbody td{padding:14px 16px;font-size:14px;white-space:nowrap;vertical-align:midd
 </style>
 </head>
 <body>
-
 <header class="header">
   <div class="header-inner">
     <div class="logo">
@@ -95,7 +97,6 @@ tbody td{padding:14px 16px;font-size:14px;white-space:nowrap;vertical-align:midd
     </div>
   </div>
 </header>
-
 <main class="main">
   <div class="stats-grid">
     <div class="stat-card">
@@ -119,7 +120,6 @@ tbody td{padding:14px 16px;font-size:14px;white-space:nowrap;vertical-align:midd
       <div class="stat-sub" id="statUpdateSub">讀取中...</div>
     </div>
   </div>
-
   <div class="best-banner" id="bestBanner">
     <div class="best-banner-left">
       <h3>🏆 今日最高息推介</h3>
@@ -127,7 +127,6 @@ tbody td{padding:14px 16px;font-size:14px;white-space:nowrap;vertical-align:midd
     </div>
     <div class="best-banner-right" id="bannerRates"></div>
   </div>
-
   <div class="filter-section">
     <div class="filter-row">
       <span class="filter-label">貨幣</span>
@@ -152,7 +151,6 @@ tbody td{padding:14px 16px;font-size:14px;white-space:nowrap;vertical-align:midd
       </div>
     </div>
   </div>
-
   <div class="table-wrapper">
     <div class="table-header-bar">
       <div class="table-title">利率比較表 <span class="bank-count" id="bankCountBadge">讀取中...</span></div>
@@ -166,18 +164,15 @@ tbody td{padding:14px 16px;font-size:14px;white-space:nowrap;vertical-align:midd
     </div>
   </div>
 </main>
-
 <footer class="footer">
   <p>⚠️ 利率資料僅供參考，實際利率以各銀行官方公布為準。</p>
   <p>數據更新：<span id="footerTime"></span></p>
   <p style="margin-top:8px;">© 2026 HK Deposit Rates</p>
 </footer>
-
 <script>
 const BANK_COLORS={'滙豐銀行':'#db1f26','恒生銀行':'#006341','中銀香港':'#c4161c','渣打銀行':'#007c59','工銀亞洲':'#c5001e','東亞銀行':'#003399','星展銀行':'#e31837','中信銀行(國際)':'#e60012','富邦銀行':'#003063','南洋商業銀行':'#c8102e','招商永隆銀行':'#8b0000','上海商業銀行':'#00468b','大眾銀行':'#003b6f','交通銀行':'#003da5','建設銀行亞洲':'#003da5','花旗銀行':'#003b70','大新銀行':'#da291c','創興銀行':'#0033a0','OCBC':'#e2231a','富融銀行':'#7c3aed','匯立銀行':'#0891b2','象象銀行':'#0ea5e9','眾安銀行':'#6366f1','Mox銀行':'#ec4899','理慧銀行':'#f97316'};
 const BANK_INITIALS={'滙豐銀行':'HS','恒生銀行':'HA','中銀香港':'BO','渣打銀行':'SC','工銀亞洲':'IC','東亞銀行':'BE','星展銀行':'DB','中信銀行(國際)':'CI','富邦銀行':'FB','南洋商業銀行':'NC','招商永隆銀行':'CM','上海商業銀行':'SC','大眾銀行':'PB','交通銀行':'BC','建設銀行亞洲':'CC','花旗銀行':'CT','大新銀行':'DS','創興銀行':'CH','OCBC':'OC','富融銀行':'FU','匯立銀行':'WL','象象銀行':'EL','眾安銀行':'ZA','Mox銀行':'MX','理慧銀行':'LV'};
 const BANK_ENGLISH_NAMES={'滙豐銀行':'HSBC','恒生銀行':'Hang Seng Bank','中銀香港':'BOCHK','渣打銀行':'Standard Chartered','工銀亞洲':'ICBC Asia','東亞銀行':'BEA','星展銀行':'DBS Bank','中信銀行(國際)':'CNCBI','富邦銀行':'Fubon Bank','南洋商業銀行':'NCB','招商永隆銀行':'CMB Wing Lung','上海商業銀行':'Shanghai Commercial Bank','大眾銀行':'Public Bank','交通銀行':'BOCOM','建設銀行亞洲':'CCB Asia','花旗銀行':'Citibank','大新銀行':'Dah Sing Bank','創興銀行':'Chong Hing Bank','OCBC':'OCBC Bank','富融銀行':'Fusion Bank','匯立銀行':'WeLab Bank','象象銀行':'EleBank','眾安銀行':'ZA Bank','Mox銀行':'Mox Bank','理慧銀行':'Livi Bank'};
-
 let allData={};
 let state={currency:'HKD',bankType:'all',search:'',sortCol:'rate',sortDir:-1};
 
@@ -238,7 +233,11 @@ function render(){
     let cls='rate-cell';if(isBest)cls+=' best';else if(isGood)cls+=' good';else cls+=' low';
     const color=BANK_COLORS[b.bank]||'#6b7280',initial=BANK_INITIALS[b.bank]||b.bank.substring(0,2),eng=BANK_ENGLISH_NAMES[b.bank]||'';
     const noMin=b.minDeposit&&b.minDeposit.includes('沒有');
-    html+='<tr class="'+(isBest?'best-rate':'')+'"><td><div class="bank-cell"><div class="bank-icon" style="background:'+color+'">'+initial+'</div><div style="display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span class="bank-name">'+b.bank+'</span><span class="bank-type '+b.type+'">'+(b.type==='traditional'?'傳統銀行':'數字銀行')+'</span></div><span class="bank-eng">'+eng+'</span></div></div></td><td class="'+cls+'">'+b.bestRate.toFixed(2)+'%</td><td class="period-cell">'+(b.bestPeriod||'—')+'</td><td class="min-deposit">'+(noMin?'<span style="color:#059669;font-weight:500">✓ '+b.minDeposit+'</span>':b.minDeposit)+'</td><td class="note-cell">'+(b.note||'—')+'</td></tr>';
+    // 如果有 url，銀行名變成可點擊連結
+    const bankNameHtml=b.url
+      ?'<a href="'+b.url+'" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;" class="bank-name">'+b.bank+'</a>'
+      :'<span class="bank-name">'+b.bank+'</span>';
+    html+='<tr class="'+(isBest?'best-rate':'')+'"><td><div class="bank-cell"><div class="bank-icon" style="background:'+color+'">'+initial+'</div><div style="display:flex;flex-direction:column;gap:3px"><div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">'+bankNameHtml+'<span class="bank-type '+b.type+'">'+(b.type==='traditional'?'傳統銀行':'數字銀行')+'</span></div><span class="bank-eng">'+eng+'</span></div></div></td><td class="'+cls+'">'+b.bestRate.toFixed(2)+'%</td><td class="period-cell">'+(b.bestPeriod||'—')+'</td><td class="min-deposit">'+(noMin?'<span class="no-min">✓ '+b.minDeposit+'</span>':b.minDeposit)+'</td><td class="note-cell">'+(b.note||'—')+'</td></tr>';
   });
   tb.innerHTML=html;
 }
@@ -258,5 +257,5 @@ async function init(){
 
 document.addEventListener('DOMContentLoaded',init);
 </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0e80eef1d920715',t:'MTc4MTkzMDAzNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
