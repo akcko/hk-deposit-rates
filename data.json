@@ -9,7 +9,7 @@
         "bestPeriod": "12個月",
         "minDeposit": "沒有最低",
         "note": "",
-        "url": "https://www.fusionbank.com/zh-hk/deposit.html"
+        "url": "https://www.fusionbank.com/deposit.html?lang=tc"
       },
       {
         "bank": "象象銀行",
@@ -18,7 +18,7 @@
         "bestPeriod": "12個月",
         "minDeposit": "沒有最低",
         "note": "auto-scraped",
-        "url": "https://www.elebank.com/"
+        "url": "https://www.elebank.com/zh-hk/hkprime.html"
       },
       {
         "bank": "匯立銀行",
@@ -27,7 +27,7 @@
         "bestPeriod": "12個月",
         "minDeposit": "HKD 10",
         "note": "",
-        "url": "https://www.welab.bank/"
+        "url": "https://www.welab.bank/zh/feature/gosave_2/"
       },
       {
         "bank": "Mox銀行",
@@ -54,7 +54,7 @@
         "bestPeriod": "3-6個月",
         "minDeposit": "HKD 50,000",
         "note": "",
-        "url": "https://www.livibank.com/"
+        "url": "https://www.livibank.com/zh_HK/features/livisave.html"
       },
       {
         "bank": "建設銀行亞洲",
@@ -63,7 +63,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "HKD 10,000",
         "note": "",
-        "url": "https://www.ccb.com.hk/personal/deposits/"
+        "url": "https://www.asia.ccb.com/hongkong_tc/personal/accounts/dep_rates.html?cmpid=HKTCDTPSACTMG-ULDEPOSITRATE"
       },
       {
         "bank": "工銀亞洲",
@@ -72,7 +72,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "HKD 50,000",
         "note": "",
-        "url": "https://www.icbcasia.com/"
+        "url": "https://www.icbcasia.com/hk/tc/personal/latest-promotion/online-time-deposit.html"
       },
       {
         "bank": "南洋商業銀行",
@@ -81,7 +81,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "HKD 100,000",
         "note": "",
-        "url": "https://www.ncb.com.hk/personal/rates/"
+        "url": "https://www.ncb.com.hk/nanyang_bank/popup1/deposit.html"
       },
       {
         "bank": "上海商業銀行",
@@ -90,7 +90,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "HKD 1,000",
         "note": "",
-        "url": "https://www.shacombank.com.hk/tch/interest-rates"
+        "url": "https://www.shacombank.com.hk/tch/personal/promotion/fix-rate.jsp"
       },
       {
         "bank": "中信銀行(國際)",
@@ -99,7 +99,7 @@
         "bestPeriod": "12個月",
         "minDeposit": "HKD 10,000",
         "note": "",
-        "url": "https://www.cncbi.com/banking/rates"
+        "url": "https://www.cncbinternational.com/personal/e-banking/inmotion/tc/offers/time_deposit/index.html"
       },
       {
         "bank": "東亞銀行",
@@ -108,7 +108,7 @@
         "bestPeriod": "3-6個月",
         "minDeposit": "HKD 10,000",
         "note": "",
-        "url": "https://www.hkbea.com/html/en/interest_rates.html"
+        "url": "https://www.hkbea.com/html/tc/bea-personal-banking-supremegold-time-deposit.html"
       },
       {
         "bank": "渣打銀行",
@@ -117,7 +117,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "HKD 10,000",
         "note": "auto-scraped",
-        "url": "https://www.sc.com/hk/deposits/"
+        "url": "https://www.sc.com/hk/zh/deposits/online-time-deposit/"
       },
       {
         "bank": "中銀香港",
@@ -126,7 +126,7 @@
         "bestPeriod": "3-6個月",
         "minDeposit": "HKD 10,000",
         "note": "",
-        "url": "https://www.bochk.com/en/bank/rates/deposit-rates.html"
+        "url": "https://www.bochk.com/tc/deposits/promotion/timedeposits.html"
       },
       {
         "bank": "恒生銀行",
@@ -135,7 +135,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "HKD 10,000",
         "note": "",
-        "url": "https://www.hangseng.com/en-hk/personal/banking/interest-rates/deposit-rates/"
+        "url": "https://cms.hangseng.com/cms/emkt/pmo/grp06/p04/chi/index.html"
       },
       {
         "bank": "滙豐銀行",
@@ -144,7 +144,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "HKD 10,000",
         "note": "",
-        "url": "https://www.hsbc.com.hk/accounts/rates/deposits/"
+        "url": "https://www.hsbc.com.hk/zh-hk/accounts/offers/deposits/"
       },
       {
         "bank": "大眾銀行",
@@ -153,7 +153,7 @@
         "bestPeriod": "1-12個月",
         "minDeposit": "HKD 100,000",
         "note": "",
-        "url": "https://www.publicbank.com.hk/personal/rates-deposits"
+        "url": "https://www.publicbank.com.hk/tc/usefultools/rates/depositinterestrates"
       },
       {
         "bank": "大新銀行",
@@ -162,7 +162,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "HKD 200,000",
         "note": "",
-        "url": "https://www.dahsing.com/html/en/interest_rates.html"
+        "url": "https://www.dahsing.com/html/tc/deposit/fixed_deposit/hkd_fixed_deposit.html"
       },
       {
         "bank": "星展銀行",
@@ -171,7 +171,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "HKD 10,000",
         "note": "",
-        "url": "https://www.dbs.com.hk/personal/rates/deposits.page"
+        "url": "https://www.dbs.com.hk/personal-zh/promotion/OnlineTD-promo"
       },
       {
         "bank": "招商永隆銀行",
@@ -180,7 +180,7 @@
         "bestPeriod": "3-12個月",
         "minDeposit": "HKD 500,000",
         "note": "",
-        "url": "https://www.cmbwinglungbank.com/wlb_corporate/hk/about-us/interest-rates/"
+        "url": "https://www.cmbwinglungbank.com/wlb_corporate/hk/personal/investments/financial-information/interest-rates/deposit-interest-rates.html"
       },
       {
         "bank": "眾安銀行",
@@ -189,7 +189,7 @@
         "bestPeriod": "12個月",
         "minDeposit": "HKD 1",
         "note": "auto-scraped",
-        "url": "https://www.zabank.com/"
+        "url": "https://bank.za.group/hk/deposit"
       }
     ],
     "USD": [
@@ -209,7 +209,7 @@
         "bestPeriod": "3-12個月",
         "minDeposit": "USD 10,000",
         "note": "",
-        "url": "https://www.ccb.com.hk/personal/deposits/"
+        "url": "https://www.asia.ccb.com/hongkong_tc/personal/accounts/dep_rates.html?cmpid=HKTCDTPSACTMG-ULDEPOSITRATE"
       },
       {
         "bank": "富融銀行",
@@ -218,7 +218,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "沒有最低",
         "note": "",
-        "url": "https://www.fusionbank.com/zh-hk/deposit.html"
+        "url": "https://www.fusionbank.com/deposit.html?lang=tc"
       },
       {
         "bank": "恒生銀行",
@@ -227,7 +227,7 @@
         "bestPeriod": "3-6個月",
         "minDeposit": "USD 2,000",
         "note": "",
-        "url": "https://www.hangseng.com/en-hk/personal/banking/interest-rates/deposit-rates/"
+        "url": "https://cms.hangseng.com/cms/emkt/pmo/grp06/p04/chi/index.html"
       },
       {
         "bank": "中銀香港",
@@ -236,7 +236,7 @@
         "bestPeriod": "3-6個月",
         "minDeposit": "USD 1,000",
         "note": "",
-        "url": "https://www.bochk.com/en/bank/rates/deposit-rates.html"
+        "url": "https://www.bochk.com/tc/deposits/promotion/timedeposits.html"
       },
       {
         "bank": "工銀亞洲",
@@ -245,7 +245,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "USD 1,000,000",
         "note": "大額優惠",
-        "url": "https://www.icbcasia.com/"
+        "url": "https://www.icbcasia.com/hk/tc/personal/latest-promotion/online-time-deposit.html"
       },
       {
         "bank": "Mox銀行",
@@ -263,7 +263,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "USD 50,000",
         "note": "",
-        "url": "https://www.cmbwinglungbank.com/wlb_corporate/hk/about-us/interest-rates/"
+        "url": "https://www.cmbwinglungbank.com/wlb_corporate/hk/personal/investments/financial-information/interest-rates/deposit-interest-rates.html"
       },
       {
         "bank": "大眾銀行",
@@ -272,7 +272,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "沒有最低",
         "note": "",
-        "url": "https://www.publicbank.com.hk/personal/rates-deposits"
+        "url": "https://www.publicbank.com.hk/tc/usefultools/rates/depositinterestrates"
       },
       {
         "bank": "南洋商業銀行",
@@ -281,7 +281,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "USD 13,000",
         "note": "",
-        "url": "https://www.ncb.com.hk/personal/rates/"
+        "url": "https://www.ncb.com.hk/nanyang_bank/popup1/deposit.html"
       },
       {
         "bank": "上海商業銀行",
@@ -290,7 +290,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "USD 10,000",
         "note": "",
-        "url": "https://www.shacombank.com.hk/tch/interest-rates"
+        "url": "https://www.shacombank.com.hk/tch/personal/promotion/fix-rate.jsp"
       },
       {
         "bank": "東亞銀行",
@@ -299,7 +299,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "USD 1,000",
         "note": "",
-        "url": "https://www.hkbea.com/html/en/interest_rates.html"
+        "url": "https://www.hkbea.com/html/tc/bea-personal-banking-supremegold-time-deposit.html"
       },
       {
         "bank": "滙豐銀行",
@@ -308,7 +308,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "USD 2,000",
         "note": "",
-        "url": "https://www.hsbc.com.hk/accounts/rates/deposits/"
+        "url": "https://www.hsbc.com.hk/zh-hk/accounts/offers/deposits/"
       },
       {
         "bank": "星展銀行",
@@ -317,7 +317,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "USD 6,000",
         "note": "",
-        "url": "https://www.dbs.com.hk/personal/rates/deposits.page"
+        "url": "https://www.dbs.com.hk/personal-zh/promotion/OnlineTD-promo"
       },
       {
         "bank": "渣打銀行",
@@ -326,7 +326,7 @@
         "bestPeriod": "3-6個月",
         "minDeposit": "USD 2,000",
         "note": "auto-scraped",
-        "url": "https://www.sc.com/hk/deposits/"
+        "url": "https://www.sc.com/hk/zh/deposits/online-time-deposit/"
       },
       {
         "bank": "象象銀行",
@@ -335,7 +335,7 @@
         "bestPeriod": "12個月",
         "minDeposit": "沒有最低",
         "note": "auto-scraped",
-        "url": "https://www.elebank.com/"
+        "url": "https://www.elebank.com/zh-hk/hkprime.html"
       },
       {
         "bank": "匯立銀行",
@@ -344,7 +344,7 @@
         "bestPeriod": "3個月",
         "minDeposit": "HKD 10",
         "note": "",
-        "url": "https://www.welab.bank/"
+        "url": "https://www.welab.bank/zh/feature/gosave_2/"
       }
     ],
     "RMB": [
@@ -355,7 +355,7 @@
         "bestPeriod": "12個月",
         "minDeposit": "沒有最低",
         "note": "",
-        "url": "https://www.fusionbank.com/zh-hk/deposit.html"
+        "url": "https://www.fusionbank.com/deposit.html?lang=tc"
       },
       {
         "bank": "富邦銀行",
@@ -373,7 +373,7 @@
         "bestPeriod": "12個月",
         "minDeposit": "RMB 100,000",
         "note": "",
-        "url": "https://www.ncb.com.hk/personal/rates/"
+        "url": "https://www.ncb.com.hk/nanyang_bank/popup1/deposit.html"
       },
       {
         "bank": "工銀亞洲",
@@ -382,7 +382,7 @@
         "bestPeriod": "12個月",
         "minDeposit": "RMB 500,000",
         "note": "",
-        "url": "https://www.icbcasia.com/"
+        "url": "https://www.icbcasia.com/hk/tc/personal/latest-promotion/online-time-deposit.html"
       },
       {
         "bank": "象象銀行",
@@ -391,7 +391,7 @@
         "bestPeriod": "6個月",
         "minDeposit": "沒有最低",
         "note": "auto-scraped",
-        "url": "https://www.elebank.com/"
+        "url": "https://www.elebank.com/zh-hk/hkprime.html"
       },
       {
         "bank": "交通銀行",
@@ -409,7 +409,7 @@
         "bestPeriod": "12個月",
         "minDeposit": "RMB 10,000",
         "note": "",
-        "url": "https://www.bochk.com/en/bank/rates/deposit-rates.html"
+        "url": "https://www.bochk.com/tc/deposits/promotion/timedeposits.html"
       },
       {
         "bank": "滙豐銀行",
@@ -418,7 +418,7 @@
         "bestPeriod": "3-12個月",
         "minDeposit": "RMB 10,000",
         "note": "",
-        "url": "https://www.hsbc.com.hk/accounts/rates/deposits/"
+        "url": "https://www.hsbc.com.hk/zh-hk/accounts/offers/deposits/"
       },
       {
         "bank": "大眾銀行",
@@ -427,7 +427,7 @@
         "bestPeriod": "12個月",
         "minDeposit": "沒有最低",
         "note": "",
-        "url": "https://www.publicbank.com.hk/personal/rates-deposits"
+        "url": "https://www.publicbank.com.hk/tc/usefultools/rates/depositinterestrates"
       },
       {
         "bank": "恒生銀行",
@@ -436,7 +436,7 @@
         "bestPeriod": "3-6個月",
         "minDeposit": "RMB 10,000",
         "note": "",
-        "url": "https://www.hangseng.com/en-hk/personal/banking/interest-rates/deposit-rates/"
+        "url": "https://cms.hangseng.com/cms/emkt/pmo/grp06/p04/chi/index.html"
       },
       {
         "bank": "渣打銀行",
@@ -445,7 +445,7 @@
         "bestPeriod": "12個月",
         "minDeposit": "RMB 10,000",
         "note": "auto-scraped",
-        "url": "https://www.sc.com/hk/deposits/"
+        "url": "https://www.sc.com/hk/zh/deposits/online-time-deposit/"
       },
       {
         "bank": "招商永隆銀行",
@@ -454,7 +454,7 @@
         "bestPeriod": "12個月",
         "minDeposit": "RMB 10,000",
         "note": "",
-        "url": "https://www.cmbwinglungbank.com/wlb_corporate/hk/about-us/interest-rates/"
+        "url": "https://www.cmbwinglungbank.com/wlb_corporate/hk/personal/investments/financial-information/interest-rates/deposit-interest-rates.html"
       }
     ]
   }
