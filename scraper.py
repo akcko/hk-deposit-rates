@@ -1,29 +1,27 @@
 #!/usr/bin/env python3
 """
-香港銀行定期存款利率自動爬蟲
-運行環境：GitHub Actions（伺服器端，冇 CORS 限制）
-每日自動執行，更新 data.json
-
-注意：銀行網站經常改版，爬蟲需要不定期維護。
-如果某間銀行爬不到，會自動用 fallback 數據替代。
+香港銀行定期存款利率自動爬蟲（改良版）
+加強過濾，避免抓到非利率數字
 """
 import json
 import re
-import sys
 from datetime import datetime
 from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
 
-# ===== 設定 =====
 OUTPUT_FILE = "data.json"
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 }
 
-# Fallback 數據（當爬蟲失敗時用）
+# 利率合理範圍（過濾垃圾數據）
+MIN_REASONABLE_RATE = 0.01
+MAX_REASONABLE_RATE = 15.0
+
 FALLBACK_RATES = {
+    # ... 同之前一樣 ...
     "HKD": [
         {"bank": "富融銀行", "type": "virtual", "bestRate": 2.90, "bestPeriod": "12個月", "minDeposit": "沒有最低", "note": ""},
         {"bank": "象象銀行", "type": "virtual", "bestRate": 2.90, "bestPeriod": "12個月", "minDeposit": "沒有最低", "note": ""},
@@ -83,53 +81,80 @@ FALLBACK_RATES = {
 }
 
 
+def extract_rates(html_text, max_rate=10.0):
+    """從 HTML 提取合理範圍內的利率數字"""
+    # 搵 "X.XX%" 格式
+    matches = re.findall(r'(\d+\.\d+)%', html_text)
+    rates = []
+    for m in matches:
+        val = float(m)
+        # 過濾明顯垃圾數據（利率應該喺 0.01% 到 15% 之間）
+        if MIN_REASONABLE_RATE <= val <= MAX_REASONABLE_RATE:
+            rates.append(val)
+    return rates
+
+
 def scrape_fusion_bank():
-    """嘗試爬富融銀行"""
+    """爬富融銀行"""
     try:
         url = "https://www.fusionbank.com/zh-hk/deposit.html"
         r = requests.get(url, headers=HEADERS, timeout=15)
         r.raise_for_status()
-        
-        # 用 regex 搵利率數字
-        matches = re.findall(r'(\d+\.\d+)%', r.text)
-        if matches:
-            rates = [float(m) for m in matches]
+        rates = extract_rates(r.text)
+        if rates:
             max_rate = max(rates)
-            # 搵對應期數（簡化處理）
             return {"bank": "富融銀行", "type": "virtual", "bestRate": max_rate, "bestPeriod": "12個月", "minDeposit": "沒有最低", "note": "auto-scraped"}
     except Exception as e:
-        print(f"Fusion Bank scrape failed: {e}")
+        print(f"Fusion Bank failed: {e}")
     return None
 
 
 def scrape_mox_bank():
-    """嘗試爬 Mox 銀行"""
+    """爬 Mox 銀行（用更嚴格過濾）"""
     try:
         url = "https://www.mox.com/"
         r = requests.get(url, headers=HEADERS, timeout=15)
         r.raise_for_status()
         
-        matches = re.findall(r'(\d+\.\d+)%', r.text)
-        if matches:
-            rates = [float(m) for m in matches]
+        # 用 BeautifulSoup 搵文字附近嘅利率，避免亂抓
+        soup = BeautifulSoup(r.text, 'html.parser')
+        text = soup.get_text()
+        
+        # 搵 "X%" 或 "X.XX%" 附近嘅利率相關文字
+        rates = extract_rates(text)
+        if rates:
+            # 對 Mox 特別保守，只取最高但合理嘅（通常唔會超過 5-6%）
             max_rate = max(rates)
+            if max_rate > 6.0:
+                # 如果超過 6%，可能係垃圾數據，攞次高或 fallback
+                reasonable = [r for r in rates if r <= 6.0]
+                if reasonable:
+                    max_rate = max(reasonable)
+                else:
+                    return None  # 唔更新，用 fallback
             return {"bank": "Mox銀行", "type": "virtual", "bestRate": max_rate, "bestPeriod": "12個月", "minDeposit": "HKD 1", "note": "auto-scraped"}
     except Exception as e:
-        print(f"Mox Bank scrape failed: {e}")
+        print(f"Mox Bank failed: {e}")
     return None
 
 
 def merge_rates(existing, new_items):
-    """合併新爬到的數據到現有列表"""
+    """合併新爬到的數據，但只更新合理範圍內嘅利率"""
     for item in new_items:
         if item is None:
             continue
-        # 搵同名的銀行更新
+        # 驗證利率合理性
+        if not (MIN_REASONABLE_RATE <= item.get("bestRate", 0) <= MAX_REASONABLE_RATE):
+            print(f"Rejecting unreasonable rate for {item['bank']}: {item['bestRate']}%")
+            continue
+            
         for currency, banks in existing.items():
             for i, bank in enumerate(banks):
-                if bank["bank"] == item["bank"] and item.get("bestRate", 0) > bank["bestRate"]:
-                    existing[currency][i] = item
-                    print(f"Updated {item['bank']} ({currency}): {item['bestRate']}%")
+                if bank["bank"] == item["bank"]:
+                    # 只更新如果新利率高過舊嘅（或同樣合理）
+                    if item.get("bestRate", 0) > 0:
+                        existing[currency][i] = item
+                        print(f"Updated {item['bank']} ({currency}): {item['bestRate']}%")
                     break
     return existing
 
@@ -137,7 +162,7 @@ def merge_rates(existing, new_items):
 def main():
     print(f"Starting scraper at {datetime.now()}")
     
-    # 先載入現有數據（如果存在）
+    # 載入現有數據（如果存在）
     if Path(OUTPUT_FILE).exists():
         with open(OUTPUT_FILE, 'r', encoding='utf-8') as f:
             current = json.load(f)
@@ -146,11 +171,9 @@ def main():
         rates = FALLBACK_RATES
     
     # 嘗試爬蟲
-    scraped = []
-    scraped.append(scrape_fusion_bank())
-    scraped.append(scrape_mox_bank())
+    scraped = [scrape_fusion_bank(), scrape_mox_bank()]
     
-    # 合併結果
+    # 合併結果（有過濾）
     rates = merge_rates(rates, scraped)
     
     # 寫入文件
