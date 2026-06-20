@@ -1,10 +1,13 @@
 name: Auto Update Bank Rates
 
 on:
-  workflow_dispatch:  #  只保留這行，這樣就變成 100% 全手動了！
+  schedule:
+    # 香港時間每日朝早 9 點跑（UTC 1:00）
+    - cron: '0 1 * * *'
+  workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   update:
@@ -17,48 +20,23 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
 
       - name: Install dependencies
         run: |
           pip install requests beautifulsoup4 playwright
-          
-      - name: Cache Playwright Browsers
-        uses: actions/cache@v4
-        id: playwright-cache
-        with:
-          path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-playwright-
+          playwright install --with-deps chromium
 
-      - name: Install Playwright Dependencies
-        run: |
-          if [ "${{ steps.playwright-cache.outputs.cache-hit }}" = "true" ]; then
-            playwright install-deps chromium
-          else
-            playwright install --with-deps chromium
-          fi
-          
       - name: Run scraper
         run: python scraper.py
 
       - name: Commit and push if changed
-        permissions:
-          contents: write
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          if [ -f data.json ]; then
-            git add data.json
-            if git diff --cached --quiet; then
-              echo "No changes to commit"
-            else
-              git commit -m "auto: update rates $(date +'%Y-%m-%d %H:%M')"
-              git push
-            fi
+          git add data.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
           else
-            echo "Error: data.json not found!"
-            exit 1
+            git commit -m "auto: update rates $(date +'%Y-%m-%d %H:%M')"
+            git push
           fi
