@@ -1,12 +1,8 @@
 name: Auto Update Bank Rates
 
 on:
-  schedule:
-    # 香港時間每日朝早 9 點跑（UTC 1:00）
-    - cron: '0 1 * * *'
-  workflow_dispatch:  # 容許手動觸發
+  workflow_dispatch:  #  只保留這行，這樣就變成 100% 全手動了！
 
-# 限制整個工作流的預設權限，只在需要時給寫入權限，提升安全性
 permissions:
   contents: read
 
@@ -21,14 +17,13 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip' # 💡 優化 1：自動快取 pip 依賴，下次跑會快很多
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
           pip install requests beautifulsoup4 playwright
           
       - name: Cache Playwright Browsers
-        # 💡 優化 2：快取 Playwright 的瀏覽器檔案（大約幾百MB），避免每日重複下載，激省時間！
         uses: actions/cache@v4
         id: playwright-cache
         with:
@@ -38,7 +33,6 @@ jobs:
             ${{ runner.os }}-playwright-
 
       - name: Install Playwright Dependencies
-        # 💡 優化 3：如果快取中了，就只裝系統依賴，不重複下載 chromium
         run: |
           if [ "${{ steps.playwright-cache.outputs.cache-hit }}" = "true" ]; then
             playwright install-deps chromium
@@ -50,14 +44,12 @@ jobs:
         run: python scraper.py
 
       - name: Commit and push if changed
-        # 💡 優化 4：這裡才明確聲明寫入權限，確保安全
         permissions:
           contents: write
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 確保 data.json 存在才進行 git add，防止 scraper 失敗時噴錯
           if [ -f data.json ]; then
             git add data.json
             if git diff --cached --quiet; then
