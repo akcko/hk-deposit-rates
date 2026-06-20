@@ -223,7 +223,6 @@ function render(){
     let cls='rate-cell';if(isBest)cls+=' best';else if(isGood)cls+=' good';else cls+=' low';
     const color=BANK_COLORS[b.bank]||'#6b7280',initial=BANK_INITIALS[b.bank]||b.bank.substring(0,2),eng=BANK_ENGLISH_NAMES[b.bank]||'';
     const noMin=b.minDeposit&&b.minDeposit.includes('沒有');
-    // 銀行名：有 url 就變 clickable link，新分頁開
     const bankNameHtml=b.url
       ?'<a href="'+b.url+'" target="_blank" rel="noopener noreferrer" class="bank-name">'+b.bank+'</a>'
       :'<span class="bank-name">'+b.bank+'</span>';
