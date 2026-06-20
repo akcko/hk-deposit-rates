@@ -18,17 +18,13 @@ MIN_REASONABLE_RATE = 0.01
 MAX_REASONABLE_RATE = 15.0
 
 # ===== 各銀行定期存款利率直接連結 =====
-# 傳統銀行多數係綜合利率頁（內含定存），虛擬銀行多數直接到存款產品頁
 BANK_URLS = {
-    # 虛擬銀行（多數直接存款產品頁）
     "富融銀行": "https://www.fusionbank.com/zh-hk/deposit.html",
     "象象銀行": "https://www.elebank.com/",
     "匯立銀行": "https://www.welab.bank/",
     "Mox銀行": "https://mox.com/zh/promotions/time-deposit/",
     "理慧銀行": "https://www.livibank.com/",
     "眾安銀行": "https://www.zabank.com/",
-
-    # 傳統銀行（利率頁 / 存款產品頁）
     "滙豐銀行": "https://www.hsbc.com.hk/accounts/rates/deposits/",
     "恒生銀行": "https://www.hangseng.com/en-hk/personal/banking/interest-rates/deposit-rates/",
     "中銀香港": "https://www.bochk.com/en/bank/rates/deposit-rates.html",
@@ -37,7 +33,7 @@ BANK_URLS = {
     "東亞銀行": "https://www.hkbea.com/html/en/interest_rates.html",
     "星展銀行": "https://www.dbs.com.hk/personal/rates/deposits.page",
     "中信銀行(國際)": "https://www.cncbi.com/banking/rates",
-    "富邦銀行": "https://www.fubonbank.com.hk/personal/deposits/",
+    "富邦銀行": "https://www.fubonbank.com.hk/tc/deposit/latest-promotions/new-customers-promotion.html",
     "南洋商業銀行": "https://www.ncb.com.hk/personal/rates/",
     "招商永隆銀行": "https://www.cmbwinglungbank.com/wlb_corporate/hk/about-us/interest-rates/",
     "上海商業銀行": "https://www.shacombank.com.hk/tch/interest-rates",
@@ -185,7 +181,6 @@ def merge_rates(existing, new_items):
 
 
 def inject_urls(data):
-    """強制為所有銀行補充直接利率/存款產品頁 URL"""
     for currency, banks in data.items():
         for bank in banks:
             bank_name = bank.get("bank", "")
@@ -204,14 +199,9 @@ def main():
     else:
         rates = FALLBACK_RATES
     
-    # 1. 補充所有銀行直接利率連結
     rates = inject_urls(rates)
-    
-    # 2. 嘗試爬蟲更新利率
     scraped = [scrape_fusion_bank(), scrape_mox_bank()]
     rates = merge_rates(rates, scraped)
-    
-    # 3. 再次確保 URL 存在
     rates = inject_urls(rates)
     
     output = {
