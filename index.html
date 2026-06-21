@@ -175,7 +175,7 @@ async function loadData(){
     if(json.rates){
       allData=json.rates;
       document.getElementById('statusText').textContent='✅ 已連線';
-      document.getElementById('statUpdateSub').textContent='GitHub Actions 自動同步';
+      document.getElementById('statUpdateSub').textContent='自動同步';
       document.getElementById('footerTime').textContent=json.updated_at||'未知';
       return true;
     }
