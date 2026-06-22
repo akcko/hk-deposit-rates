@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-21 05:53",
+  "updated_at": "2026-06-22 06:22",
   "rates": {
     "HKD": [
       {
@@ -68,7 +68,7 @@
       {
         "bank": "工銀亞洲",
         "type": "traditional",
-        "bestRate": 2.55,
+        "bestRate": 2.65,
         "bestPeriod": "3個月",
         "minDeposit": "HKD 50,000",
         "note": "auto-scraped",
@@ -104,7 +104,7 @@
       {
         "bank": "東亞銀行",
         "type": "traditional",
-        "bestRate": 2.45,
+        "bestRate": 2.55,
         "bestPeriod": "3-6個月",
         "minDeposit": "HKD 10,000",
         "note": "auto-scraped",
