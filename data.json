@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07 04:42",
+  "updated_at": "2026-07-08 04:09",
   "rates": {
     "HKD": [
       {
@@ -405,7 +405,7 @@
       {
         "bank": "中銀香港",
         "type": "traditional",
-        "bestRate": 3.3,
+        "bestRate": 3.4,
         "bestPeriod": "12個月",
         "minDeposit": "RMB 10,000",
         "note": "auto-scraped",
