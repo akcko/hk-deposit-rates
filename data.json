@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-09 04:48",
+  "updated_at": "2026-07-10 04:44",
   "rates": {
     "HKD": [
       {
@@ -149,7 +149,7 @@
       {
         "bank": "大眾銀行",
         "type": "traditional",
-        "bestRate": 2.8,
+        "bestRate": 2.9,
         "bestPeriod": "1-12個月",
         "minDeposit": "HKD 100,000",
         "note": "auto-scraped",
