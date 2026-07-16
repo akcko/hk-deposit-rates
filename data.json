@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-15 03:53",
+  "updated_at": "2026-07-16 03:56",
   "rates": {
     "HKD": [
       {
@@ -23,7 +23,7 @@
       {
         "bank": "匯立銀行",
         "type": "virtual",
-        "bestRate": 3.8,
+        "bestRate": 4.0,
         "bestPeriod": "12個月",
         "minDeposit": "HKD 10",
         "note": "auto-scraped",
@@ -59,7 +59,7 @@
       {
         "bank": "建設銀行亞洲",
         "type": "traditional",
-        "bestRate": 2.5,
+        "bestRate": 3.0,
         "bestPeriod": "3個月",
         "minDeposit": "HKD 10,000",
         "note": "auto-scraped",
@@ -205,7 +205,7 @@
       {
         "bank": "建設銀行亞洲",
         "type": "traditional",
-        "bestRate": 2.5,
+        "bestRate": 3.0,
         "bestPeriod": "3-12個月",
         "minDeposit": "USD 10,000",
         "note": "auto-scraped",
@@ -340,7 +340,7 @@
       {
         "bank": "匯立銀行",
         "type": "virtual",
-        "bestRate": 3.8,
+        "bestRate": 4.0,
         "bestPeriod": "3個月",
         "minDeposit": "HKD 10",
         "note": "auto-scraped",
