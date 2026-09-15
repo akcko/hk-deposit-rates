@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-14 05:34",
+  "updated_at": "2026-09-15 05:35",
   "rates": {
     "HKD": [
       {
@@ -68,7 +68,7 @@
       {
         "bank": "工銀亞洲",
         "type": "traditional",
-        "bestRate": 2.8,
+        "bestRate": 2.9,
         "bestPeriod": "3個月",
         "minDeposit": "HKD 50,000",
         "note": "auto-scraped",
@@ -149,7 +149,7 @@
       {
         "bank": "大眾銀行",
         "type": "traditional",
-        "bestRate": 2.85,
+        "bestRate": 2.95,
         "bestPeriod": "1-12個月",
         "minDeposit": "HKD 100,000",
         "note": "auto-scraped",
@@ -241,7 +241,7 @@
       {
         "bank": "工銀亞洲",
         "type": "traditional",
-        "bestRate": 3.7,
+        "bestRate": 3.8,
         "bestPeriod": "3個月",
         "minDeposit": "USD 1,000,000",
         "note": "auto-scraped",
