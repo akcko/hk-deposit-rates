@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17 05:36",
+  "updated_at": "2026-09-18 05:24",
   "rates": {
     "HKD": [
       {
@@ -32,7 +32,7 @@
       {
         "bank": "Mox銀行",
         "type": "virtual",
-        "bestRate": 3.7,
+        "bestRate": 3.85,
         "bestPeriod": "12個月",
         "minDeposit": "HKD 1",
         "note": "auto-scraped",
@@ -250,7 +250,7 @@
       {
         "bank": "Mox銀行",
         "type": "virtual",
-        "bestRate": 3.7,
+        "bestRate": 3.85,
         "bestPeriod": "12個月",
         "minDeposit": "HKD 1",
         "note": "auto-scraped",
