@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24 05:39",
+  "updated_at": "2026-09-25 05:35",
   "rates": {
     "HKD": [
       {
@@ -50,7 +50,7 @@
       {
         "bank": "理慧銀行",
         "type": "virtual",
-        "bestRate": 2.8,
+        "bestRate": 2.9,
         "bestPeriod": "3-6個月",
         "minDeposit": "HKD 50,000",
         "note": "auto-scraped",
@@ -149,7 +149,7 @@
       {
         "bank": "大眾銀行",
         "type": "traditional",
-        "bestRate": 2.95,
+        "bestRate": 3.05,
         "bestPeriod": "1-12個月",
         "minDeposit": "HKD 100,000",
         "note": "auto-scraped",
@@ -196,7 +196,7 @@
       {
         "bank": "富邦銀行",
         "type": "traditional",
-        "bestRate": 4.25,
+        "bestRate": 4.35,
         "bestPeriod": "3個月",
         "minDeposit": "USD 65,000",
         "note": "auto-scraped",
