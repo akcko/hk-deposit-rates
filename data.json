@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12 06:45",
+  "updated_at": "2026-10-13 07:13",
   "rates": {
     "HKD": [
       {
@@ -196,7 +196,7 @@
       {
         "bank": "富邦銀行",
         "type": "traditional",
-        "bestRate": 4.35,
+        "bestRate": 4.45,
         "bestPeriod": "3個月",
         "minDeposit": "USD 65,000",
         "note": "auto-scraped",
