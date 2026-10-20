@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19 05:28",
+  "updated_at": "2026-10-20 05:32",
   "rates": {
     "HKD": [
       {
@@ -223,7 +223,7 @@
       {
         "bank": "恒生銀行",
         "type": "traditional",
-        "bestRate": 3.6,
+        "bestRate": 4.0,
         "bestPeriod": "3-6個月",
         "minDeposit": "USD 2,000",
         "note": "auto-scraped",
