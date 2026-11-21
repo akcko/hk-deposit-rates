@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20 07:53",
+  "updated_at": "2026-11-21 07:51",
   "rates": {
     "HKD": [
       {
@@ -50,7 +50,7 @@
       {
         "bank": "理慧銀行",
         "type": "virtual",
-        "bestRate": 3.35,
+        "bestRate": 3.25,
         "bestPeriod": "3-6個月",
         "minDeposit": "HKD 50,000",
         "note": "auto-scraped",
